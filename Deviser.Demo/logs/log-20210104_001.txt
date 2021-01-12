@@ -1,0 +1,746 @@
+2021-01-04 06:51:41.313 +01:00 [Information] User profile is available. Using '"C:\Users\Karthick\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-01-04 06:51:41.394 +01:00 [Information] Entity Framework Core "5.0.0" initialized '"DeviserDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=Deviser.Core.Data "
+2021-01-04 06:51:41.465 +01:00 [Debug] Compiling query expression: "
+"'"DbSet<User>()
+    .FirstOrDefault(u => u.NormalizedUserName == __normalizedUserName_0)"'
+2021-01-04 06:51:41.607 +01:00 [Debug] Generated query execution expression: "
+"'"queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<User>(
+    asyncEnumerable: new SingleQueryingEnumerable<User>(
+        (RelationalQueryContext)queryContext, 
+        RelationalCommandCache.SelectExpression(
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: User.Id (Guid) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: User.AccessFailedCount (int) Required, 1], [Property: User.ConcurrencyStamp (string) Concurrency, 2], [Property: User.Email (string) MaxLength(256), 3], [Property: User.EmailConfirmed (bool) Required, 4], [Property: User.FirstName (string) MaxLength(100), 5], [Property: User.LastName (string) MaxLength(100), 6], [Property: User.LockoutEnabled (bool) Required, 7], [Property: User.LockoutEnd (Nullable<DateTimeOffset>), 8], [Property: User.NormalizedEmail (string) Index MaxLength(256), 9], [Property: User.NormalizedUserName (string) Index MaxLength(256), 10], [Property: User.PasswordHash (string), 11], [Property: User.PhoneNumber (string), 12], [Property: User.PhoneNumberConfirmed (bool) Required, 13], [Property: User.SecurityStamp (string), 14], [Property: User.TwoFactorEnabled (bool) Required, 15], [Property: User.UserName (string) MaxLength(256), 16], }
+            SELECT TOP(1) d.Id, d.AccessFailedCount, d.ConcurrencyStamp, d.Email, d.EmailConfirmed, d.FirstName, d.LastName, d.LockoutEnabled, d.LockoutEnd, d.NormalizedEmail, d.NormalizedUserName, d.PasswordHash, d.PhoneNumber, d.PhoneNumberConfirmed, d.SecurityStamp, d.TwoFactorEnabled, d.UserName
+            FROM dp_User AS d
+            WHERE d.NormalizedUserName == @__normalizedUserName_0), 
+        Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, User>, 
+        Deviser.Core.Data.DeviserDbContext, 
+        False, 
+        False
+    ), 
+    cancellationToken: queryContext.CancellationToken)"'
+2021-01-04 06:51:41.643 +01:00 [Debug] Creating DbCommand for '"ExecuteReader"'.
+2021-01-04 06:51:41.648 +01:00 [Debug] Created DbCommand for '"ExecuteReader"' (0ms).
+2021-01-04 06:51:41.648 +01:00 [Debug] Opening connection to database '"Deviser.Demo"' on server '"(localdb)\mssqllocaldb"'.
+2021-01-04 06:51:41.648 +01:00 [Debug] Opened connection to database '"Deviser.Demo"' on server '"(localdb)\mssqllocaldb"'.
+2021-01-04 06:51:41.657 +01:00 [Debug] Executing DbCommand [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [d].[Id], [d].[AccessFailedCount], [d].[ConcurrencyStamp], [d].[Email], [d].[EmailConfirmed], [d].[FirstName], [d].[LastName], [d].[LockoutEnabled], [d].[LockoutEnd], [d].[NormalizedEmail], [d].[NormalizedUserName], [d].[PasswordHash], [d].[PhoneNumber], [d].[PhoneNumberConfirmed], [d].[SecurityStamp], [d].[TwoFactorEnabled], [d].[UserName]
+FROM [dp_User] AS [d]
+WHERE [d].[NormalizedUserName] = @__normalizedUserName_0"
+2021-01-04 06:51:41.667 +01:00 [Information] Executed DbCommand ("12"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [d].[Id], [d].[AccessFailedCount], [d].[ConcurrencyStamp], [d].[Email], [d].[EmailConfirmed], [d].[FirstName], [d].[LastName], [d].[LockoutEnabled], [d].[LockoutEnd], [d].[NormalizedEmail], [d].[NormalizedUserName], [d].[PasswordHash], [d].[PhoneNumber], [d].[PhoneNumberConfirmed], [d].[SecurityStamp], [d].[TwoFactorEnabled], [d].[UserName]
+FROM [dp_User] AS [d]
+WHERE [d].[NormalizedUserName] = @__normalizedUserName_0"
+2021-01-04 06:51:41.672 +01:00 [Debug] A data reader was disposed.
+2021-01-04 06:51:41.673 +01:00 [Debug] Closing connection to database '"Deviser.Demo"' on server '"(localdb)\mssqllocaldb"'.
+2021-01-04 06:51:41.673 +01:00 [Debug] Closed connection to database '"Deviser.Demo"' on server '"(localdb)\mssqllocaldb"'.
+2021-01-04 06:51:41.721 +01:00 [Debug] Context '"DeviserDbContext"' started tracking '"User"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2021-01-04 06:51:41.723 +01:00 [Debug] SaveChanges starting for '"DeviserDbContext"'.
+2021-01-04 06:51:41.723 +01:00 [Debug] DetectChanges starting for '"DeviserDbContext"'.
+2021-01-04 06:51:41.728 +01:00 [Debug] DetectChanges completed for '"DeviserDbContext"'.
+2021-01-04 06:51:41.737 +01:00 [Debug] Opening connection to database '"Deviser.Demo"' on server '"(localdb)\mssqllocaldb"'.
+2021-01-04 06:51:41.737 +01:00 [Debug] Opened connection to database '"Deviser.Demo"' on server '"(localdb)\mssqllocaldb"'.
+2021-01-04 06:51:41.738 +01:00 [Debug] Beginning transaction with isolation level '"Unspecified"'.
+2021-01-04 06:51:41.738 +01:00 [Debug] Began transaction with isolation level '"ReadCommitted"'.
+2021-01-04 06:51:41.739 +01:00 [Debug] Creating DbCommand for '"ExecuteReader"'.
+2021-01-04 06:51:41.740 +01:00 [Debug] Created DbCommand for '"ExecuteReader"' (0ms).
+2021-01-04 06:51:41.740 +01:00 [Debug] Executing DbCommand [Parameters=["@p0='?' (DbType = Guid), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 256), @p4='?' (DbType = Boolean), @p5='?' (Size = 100), @p6='?' (Size = 100), @p7='?' (DbType = Boolean), @p8='?' (DbType = DateTimeOffset), @p9='?' (Size = 256), @p10='?' (Size = 256), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (Size = 4000), @p15='?' (DbType = Boolean), @p16='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [dp_User] ([Id], [AccessFailedCount], [ConcurrencyStamp], [Email], [EmailConfirmed], [FirstName], [LastName], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16);"
+2021-01-04 06:51:41.742 +01:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@p0='?' (DbType = Guid), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 256), @p4='?' (DbType = Boolean), @p5='?' (Size = 100), @p6='?' (Size = 100), @p7='?' (DbType = Boolean), @p8='?' (DbType = DateTimeOffset), @p9='?' (Size = 256), @p10='?' (Size = 256), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (Size = 4000), @p15='?' (DbType = Boolean), @p16='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [dp_User] ([Id], [AccessFailedCount], [ConcurrencyStamp], [Email], [EmailConfirmed], [FirstName], [LastName], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16);"
+2021-01-04 06:51:41.746 +01:00 [Debug] A data reader was disposed.
+2021-01-04 06:51:41.746 +01:00 [Debug] Committing transaction.
+2021-01-04 06:51:41.747 +01:00 [Debug] Committed transaction.
+2021-01-04 06:51:41.747 +01:00 [Debug] Closing connection to database '"Deviser.Demo"' on server '"(localdb)\mssqllocaldb"'.
+2021-01-04 06:51:41.747 +01:00 [Debug] Closed connection to database '"Deviser.Demo"' on server '"(localdb)\mssqllocaldb"'.
+2021-01-04 06:51:41.747 +01:00 [Debug] Disposing transaction.
+2021-01-04 06:51:41.753 +01:00 [Debug] An entity of type '"User"' tracked by '"DeviserDbContext"' changed state from 'Added' to 'Unchanged'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2021-01-04 06:51:41.755 +01:00 [Debug] SaveChanges completed for '"DeviserDbContext"' with 1 entities written to the database.
+2021-01-04 06:51:41.761 +01:00 [Debug] Compiling query expression: "
+"'"DbSet<Role>()
+    .SingleOrDefault(r => r.NormalizedName == __normalizedRoleName_0)"'
+2021-01-04 06:51:41.764 +01:00 [Debug] Generated query execution expression: "
+"'"queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<Role>(
+    asyncEnumerable: new SingleQueryingEnumerable<Role>(
+        (RelationalQueryContext)queryContext, 
+        RelationalCommandCache.SelectExpression(
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: Role.Id (Guid) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Role.ConcurrencyStamp (string) Concurrency, 1], [Property: Role.Name (string) MaxLength(256), 2], [Property: Role.NormalizedName (string) Index MaxLength(256), 3], }
+            SELECT TOP(2) d.Id, d.ConcurrencyStamp, d.Name, d.NormalizedName
+            FROM dp_Role AS d
+            WHERE d.NormalizedName == @__normalizedRoleName_0), 
+        Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, Role>, 
+        Deviser.Core.Data.DeviserDbContext, 
+        False, 
+        False
+    ), 
+    cancellationToken: queryContext.CancellationToken)"'
+2021-01-04 06:51:41.764 +01:00 [Debug] Creating DbCommand for '"ExecuteReader"'.
+2021-01-04 06:51:41.765 +01:00 [Debug] Created DbCommand for '"ExecuteReader"' (0ms).
+2021-01-04 06:51:41.765 +01:00 [Debug] Opening connection to database '"Deviser.Demo"' on server '"(localdb)\mssqllocaldb"'.
+2021-01-04 06:51:41.765 +01:00 [Debug] Opened connection to database '"Deviser.Demo"' on server '"(localdb)\mssqllocaldb"'.
+2021-01-04 06:51:41.765 +01:00 [Debug] Executing DbCommand [Parameters=["@__normalizedRoleName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [d].[Id], [d].[ConcurrencyStamp], [d].[Name], [d].[NormalizedName]
+FROM [dp_Role] AS [d]
+WHERE [d].[NormalizedName] = @__normalizedRoleName_0"
+2021-01-04 06:51:41.769 +01:00 [Information] Executed DbCommand ("4"ms) [Parameters=["@__normalizedRoleName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [d].[Id], [d].[ConcurrencyStamp], [d].[Name], [d].[NormalizedName]
+FROM [dp_Role] AS [d]
+WHERE [d].[NormalizedName] = @__normalizedRoleName_0"
+2021-01-04 06:51:41.773 +01:00 [Debug] Context '"DeviserDbContext"' started tracking '"Role"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2021-01-04 06:51:41.774 +01:00 [Debug] A data reader was disposed.
+2021-01-04 06:51:41.774 +01:00 [Debug] Closing connection to database '"Deviser.Demo"' on server '"(localdb)\mssqllocaldb"'.
+2021-01-04 06:51:41.774 +01:00 [Debug] Closed connection to database '"Deviser.Demo"' on server '"(localdb)\mssqllocaldb"'.
+2021-01-04 06:51:41.782 +01:00 [Debug] Compiling query expression: "
+"'"DbSet<UserRole>()
+    .FirstOrDefault(e => object.Equals(
+        objA: EF.Property<object>(e, \"UserId\"), 
+        objB: (object)__get_Item_0) && object.Equals(
+        objA: EF.Property<object>(e, \"RoleId\"), 
+        objB: (object)__get_Item_1))"'
+2021-01-04 06:51:41.814 +01:00 [Debug] Generated query execution expression: "
+"'"queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<UserRole>(
+    asyncEnumerable: new SingleQueryingEnumerable<UserRole>(
+        (RelationalQueryContext)queryContext, 
+        RelationalCommandCache.SelectExpression(
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: UserRole.UserId (Guid) Required PK FK AfterSave:Throw, 0], [Property: UserRole.RoleId (Guid) Required PK FK Index AfterSave:Throw, 1], }
+            SELECT TOP(1) d.UserId, d.RoleId
+            FROM dp_UserRole AS d
+            WHERE (d.UserId == @__get_Item_0) && (d.RoleId == @__get_Item_1)), 
+        Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, UserRole>, 
+        Deviser.Core.Data.DeviserDbContext, 
+        False, 
+        False
+    ), 
+    cancellationToken: queryContext.CancellationToken)"'
+2021-01-04 06:51:41.815 +01:00 [Debug] Creating DbCommand for '"ExecuteReader"'.
+2021-01-04 06:51:41.815 +01:00 [Debug] Created DbCommand for '"ExecuteReader"' (0ms).
+2021-01-04 06:51:41.815 +01:00 [Debug] Opening connection to database '"Deviser.Demo"' on server '"(localdb)\mssqllocaldb"'.
+2021-01-04 06:51:41.816 +01:00 [Debug] Opened connection to database '"Deviser.Demo"' on server '"(localdb)\mssqllocaldb"'.
+2021-01-04 06:51:41.816 +01:00 [Debug] Executing DbCommand [Parameters=["@__get_Item_0='?' (DbType = Guid), @__get_Item_1='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [d].[UserId], [d].[RoleId]
+FROM [dp_UserRole] AS [d]
+WHERE ([d].[UserId] = @__get_Item_0) AND ([d].[RoleId] = @__get_Item_1)"
+2021-01-04 06:51:41.817 +01:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__get_Item_0='?' (DbType = Guid), @__get_Item_1='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [d].[UserId], [d].[RoleId]
+FROM [dp_UserRole] AS [d]
+WHERE ([d].[UserId] = @__get_Item_0) AND ([d].[RoleId] = @__get_Item_1)"
+2021-01-04 06:51:41.817 +01:00 [Debug] A data reader was disposed.
+2021-01-04 06:51:41.817 +01:00 [Debug] Closing connection to database '"Deviser.Demo"' on server '"(localdb)\mssqllocaldb"'.
+2021-01-04 06:51:41.817 +01:00 [Debug] Closed connection to database '"Deviser.Demo"' on server '"(localdb)\mssqllocaldb"'.
+2021-01-04 06:51:41.824 +01:00 [Debug] Creating DbCommand for '"ExecuteReader"'.
+2021-01-04 06:51:41.824 +01:00 [Debug] Created DbCommand for '"ExecuteReader"' (0ms).
+2021-01-04 06:51:41.824 +01:00 [Debug] Opening connection to database '"Deviser.Demo"' on server '"(localdb)\mssqllocaldb"'.
+2021-01-04 06:51:41.824 +01:00 [Debug] Opened connection to database '"Deviser.Demo"' on server '"(localdb)\mssqllocaldb"'.
+2021-01-04 06:51:41.824 +01:00 [Debug] Executing DbCommand [Parameters=["@__normalizedRoleName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [d].[Id], [d].[ConcurrencyStamp], [d].[Name], [d].[NormalizedName]
+FROM [dp_Role] AS [d]
+WHERE [d].[NormalizedName] = @__normalizedRoleName_0"
+2021-01-04 06:51:41.825 +01:00 [Information] Executed DbCommand ("1"ms) [Parameters=["@__normalizedRoleName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [d].[Id], [d].[ConcurrencyStamp], [d].[Name], [d].[NormalizedName]
+FROM [dp_Role] AS [d]
+WHERE [d].[NormalizedName] = @__normalizedRoleName_0"
+2021-01-04 06:51:41.825 +01:00 [Debug] A data reader was disposed.
+2021-01-04 06:51:41.826 +01:00 [Debug] Closing connection to database '"Deviser.Demo"' on server '"(localdb)\mssqllocaldb"'.
+2021-01-04 06:51:41.826 +01:00 [Debug] Closed connection to database '"Deviser.Demo"' on server '"(localdb)\mssqllocaldb"'.
+2021-01-04 06:51:41.832 +01:00 [Debug] Context '"DeviserDbContext"' started tracking '"UserRole"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2021-01-04 06:51:41.833 +01:00 [Debug] Creating DbCommand for '"ExecuteReader"'.
+2021-01-04 06:51:41.833 +01:00 [Debug] Created DbCommand for '"ExecuteReader"' (0ms).
+2021-01-04 06:51:41.833 +01:00 [Debug] Opening connection to database '"Deviser.Demo"' on server '"(localdb)\mssqllocaldb"'.
+2021-01-04 06:51:41.833 +01:00 [Debug] Opened connection to database '"Deviser.Demo"' on server '"(localdb)\mssqllocaldb"'.
+2021-01-04 06:51:41.833 +01:00 [Debug] Executing DbCommand [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [d].[Id], [d].[AccessFailedCount], [d].[ConcurrencyStamp], [d].[Email], [d].[EmailConfirmed], [d].[FirstName], [d].[LastName], [d].[LockoutEnabled], [d].[LockoutEnd], [d].[NormalizedEmail], [d].[NormalizedUserName], [d].[PasswordHash], [d].[PhoneNumber], [d].[PhoneNumberConfirmed], [d].[SecurityStamp], [d].[TwoFactorEnabled], [d].[UserName]
+FROM [dp_User] AS [d]
+WHERE [d].[NormalizedUserName] = @__normalizedUserName_0"
+2021-01-04 06:51:41.838 +01:00 [Information] Executed DbCommand ("5"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [d].[Id], [d].[AccessFailedCount], [d].[ConcurrencyStamp], [d].[Email], [d].[EmailConfirmed], [d].[FirstName], [d].[LastName], [d].[LockoutEnabled], [d].[LockoutEnd], [d].[NormalizedEmail], [d].[NormalizedUserName], [d].[PasswordHash], [d].[PhoneNumber], [d].[PhoneNumberConfirmed], [d].[SecurityStamp], [d].[TwoFactorEnabled], [d].[UserName]
+FROM [dp_User] AS [d]
+WHERE [d].[NormalizedUserName] = @__normalizedUserName_0"
+2021-01-04 06:51:41.839 +01:00 [Debug] A data reader was disposed.
+2021-01-04 06:51:41.839 +01:00 [Debug] Closing connection to database '"Deviser.Demo"' on server '"(localdb)\mssqllocaldb"'.
+2021-01-04 06:51:41.839 +01:00 [Debug] Closed connection to database '"Deviser.Demo"' on server '"(localdb)\mssqllocaldb"'.
+2021-01-04 06:51:41.843 +01:00 [Debug] An entity of type '"User"' tracked by '"DeviserDbContext"' changed state from 'Unchanged' to 'Modified'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2021-01-04 06:51:41.843 +01:00 [Debug] SaveChanges starting for '"DeviserDbContext"'.
+2021-01-04 06:51:41.843 +01:00 [Debug] DetectChanges starting for '"DeviserDbContext"'.
+2021-01-04 06:51:41.845 +01:00 [Debug] DetectChanges completed for '"DeviserDbContext"'.
+2021-01-04 06:51:41.845 +01:00 [Debug] Opening connection to database '"Deviser.Demo"' on server '"(localdb)\mssqllocaldb"'.
+2021-01-04 06:51:41.845 +01:00 [Debug] Opened connection to database '"Deviser.Demo"' on server '"(localdb)\mssqllocaldb"'.
+2021-01-04 06:51:41.845 +01:00 [Debug] Beginning transaction with isolation level '"Unspecified"'.
+2021-01-04 06:51:41.845 +01:00 [Debug] Began transaction with isolation level '"ReadCommitted"'.
+2021-01-04 06:51:41.855 +01:00 [Debug] Executing update commands individually as the number of batchable commands (2) is smaller than the minimum batch size (4).
+2021-01-04 06:51:41.857 +01:00 [Debug] Creating DbCommand for '"ExecuteReader"'.
+2021-01-04 06:51:41.857 +01:00 [Debug] Created DbCommand for '"ExecuteReader"' (0ms).
+2021-01-04 06:51:41.857 +01:00 [Debug] Executing DbCommand [Parameters=["@p16='?' (DbType = Guid), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p17='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (DbType = Boolean), @p4='?' (Size = 100), @p5='?' (Size = 100), @p6='?' (DbType = Boolean), @p7='?' (DbType = DateTimeOffset), @p8='?' (Size = 256), @p9='?' (Size = 256), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [dp_User] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [Email] = @p2, [EmailConfirmed] = @p3, [FirstName] = @p4, [LastName] = @p5, [LockoutEnabled] = @p6, [LockoutEnd] = @p7, [NormalizedEmail] = @p8, [NormalizedUserName] = @p9, [PasswordHash] = @p10, [PhoneNumber] = @p11, [PhoneNumberConfirmed] = @p12, [SecurityStamp] = @p13, [TwoFactorEnabled] = @p14, [UserName] = @p15
+WHERE [Id] = @p16 AND [ConcurrencyStamp] = @p17;
+SELECT @@ROWCOUNT;"
+2021-01-04 06:51:41.863 +01:00 [Information] Executed DbCommand ("5"ms) [Parameters=["@p16='?' (DbType = Guid), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p17='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (DbType = Boolean), @p4='?' (Size = 100), @p5='?' (Size = 100), @p6='?' (DbType = Boolean), @p7='?' (DbType = DateTimeOffset), @p8='?' (Size = 256), @p9='?' (Size = 256), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [dp_User] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [Email] = @p2, [EmailConfirmed] = @p3, [FirstName] = @p4, [LastName] = @p5, [LockoutEnabled] = @p6, [LockoutEnd] = @p7, [NormalizedEmail] = @p8, [NormalizedUserName] = @p9, [PasswordHash] = @p10, [PhoneNumber] = @p11, [PhoneNumberConfirmed] = @p12, [SecurityStamp] = @p13, [TwoFactorEnabled] = @p14, [UserName] = @p15
+WHERE [Id] = @p16 AND [ConcurrencyStamp] = @p17;
+SELECT @@ROWCOUNT;"
+2021-01-04 06:51:41.864 +01:00 [Debug] A data reader was disposed.
+2021-01-04 06:51:41.865 +01:00 [Debug] Creating DbCommand for '"ExecuteReader"'.
+2021-01-04 06:51:41.865 +01:00 [Debug] Created DbCommand for '"ExecuteReader"' (0ms).
+2021-01-04 06:51:41.865 +01:00 [Debug] Executing DbCommand [Parameters=["@p0='?' (DbType = Guid), @p1='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [dp_UserRole] ([RoleId], [UserId])
+VALUES (@p0, @p1);"
+2021-01-04 06:51:41.866 +01:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@p0='?' (DbType = Guid), @p1='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [dp_UserRole] ([RoleId], [UserId])
+VALUES (@p0, @p1);"
+2021-01-04 06:51:41.866 +01:00 [Debug] A data reader was disposed.
+2021-01-04 06:51:41.866 +01:00 [Debug] Committing transaction.
+2021-01-04 06:51:41.867 +01:00 [Debug] Committed transaction.
+2021-01-04 06:51:41.867 +01:00 [Debug] Closing connection to database '"Deviser.Demo"' on server '"(localdb)\mssqllocaldb"'.
+2021-01-04 06:51:41.867 +01:00 [Debug] Closed connection to database '"Deviser.Demo"' on server '"(localdb)\mssqllocaldb"'.
+2021-01-04 06:51:41.867 +01:00 [Debug] Disposing transaction.
+2021-01-04 06:51:41.867 +01:00 [Debug] An entity of type '"UserRole"' tracked by '"DeviserDbContext"' changed state from 'Added' to 'Unchanged'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2021-01-04 06:51:41.867 +01:00 [Debug] An entity of type '"User"' tracked by '"DeviserDbContext"' changed state from 'Modified' to 'Unchanged'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2021-01-04 06:51:41.867 +01:00 [Debug] SaveChanges completed for '"DeviserDbContext"' with 2 entities written to the database.
+2021-01-04 06:52:02.097 +01:00 [Debug] An 'IServiceProvider' was created for internal use by Entity Framework.
+2021-01-04 06:52:02.775 +01:00 [Debug] The index "{'ContentTypeId'}" was not created on entity type '"ContentTypeProperty"' as the properties are already covered by the index "{'ContentTypeId', 'PropertyId'}".
+2021-01-04 06:52:02.776 +01:00 [Debug] The index "{'LayoutTypeId'}" was not created on entity type '"LayoutTypeProperty"' as the properties are already covered by the index "{'LayoutTypeId', 'PropertyId'}".
+2021-01-04 06:52:02.776 +01:00 [Debug] The index "{'ModuleViewId'}" was not created on entity type '"ModuleViewProperty"' as the properties are already covered by the index "{'ModuleViewId', 'PropertyId'}".
+2021-01-04 06:52:02.776 +01:00 [Debug] The index "{'PageId'}" was not created on entity type '"PageTranslation"' as the properties are already covered by the index "{'PageId', 'Locale'}".
+2021-01-04 06:52:02.776 +01:00 [Debug] The index "{'UserId'}" was not created on entity type '"UserRole"' as the properties are already covered by the index "{'UserId', 'RoleId'}".
+2021-01-04 06:52:02.776 +01:00 [Debug] The index "{'UserId'}" was not created on entity type '"IdentityUserToken<Guid>"' as the properties are already covered by the index "{'UserId', 'LoginProvider', 'Name'}".
+2021-01-04 06:52:02.993 +01:00 [Information] Entity Framework Core "5.0.0" initialized '"DeviserDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=Deviser.Core.Data "
+2021-01-04 06:52:03.046 +01:00 [Debug] Compiling query expression: "
+"'"DbSet<SiteSetting>()"'
+2021-01-04 06:52:03.173 +01:00 [Debug] Generated query execution expression: "
+"'"queryContext => new SingleQueryingEnumerable<SiteSetting>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.SelectExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: SiteSetting.Id (Guid) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: SiteSetting.SettingName (string) MaxLength(50), 1], [Property: SiteSetting.SettingValue (string), 2], }
+        SELECT d.Id, d.SettingName, d.SettingValue
+        FROM dp_SiteSetting AS d), 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, SiteSetting>, 
+    Deviser.Core.Data.DeviserDbContext, 
+    False, 
+    False
+)"'
+2021-01-04 06:52:03.203 +01:00 [Debug] Creating DbCommand for '"ExecuteReader"'.
+2021-01-04 06:52:03.246 +01:00 [Debug] Created DbCommand for '"ExecuteReader"' (41ms).
+2021-01-04 06:52:03.250 +01:00 [Debug] Opening connection to database '"Deviser.Demo"' on server '"(localdb)\mssqllocaldb"'.
+2021-01-04 06:52:03.546 +01:00 [Debug] Opened connection to database '"Deviser.Demo"' on server '"(localdb)\mssqllocaldb"'.
+2021-01-04 06:52:03.554 +01:00 [Debug] Executing DbCommand [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [d].[Id], [d].[SettingName], [d].[SettingValue]
+FROM [dp_SiteSetting] AS [d]"
+2021-01-04 06:52:03.587 +01:00 [Information] Executed DbCommand ("28"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [d].[Id], [d].[SettingName], [d].[SettingValue]
+FROM [dp_SiteSetting] AS [d]"
+2021-01-04 06:52:03.618 +01:00 [Debug] Context '"DeviserDbContext"' started tracking '"SiteSetting"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2021-01-04 06:52:03.637 +01:00 [Debug] Context '"DeviserDbContext"' started tracking '"SiteSetting"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2021-01-04 06:52:03.638 +01:00 [Debug] Context '"DeviserDbContext"' started tracking '"SiteSetting"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2021-01-04 06:52:03.638 +01:00 [Debug] Context '"DeviserDbContext"' started tracking '"SiteSetting"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2021-01-04 06:52:03.638 +01:00 [Debug] Context '"DeviserDbContext"' started tracking '"SiteSetting"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2021-01-04 06:52:03.639 +01:00 [Debug] Context '"DeviserDbContext"' started tracking '"SiteSetting"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2021-01-04 06:52:03.639 +01:00 [Debug] Context '"DeviserDbContext"' started tracking '"SiteSetting"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2021-01-04 06:52:03.639 +01:00 [Debug] Context '"DeviserDbContext"' started tracking '"SiteSetting"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2021-01-04 06:52:03.639 +01:00 [Debug] Context '"DeviserDbContext"' started tracking '"SiteSetting"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2021-01-04 06:52:03.639 +01:00 [Debug] Context '"DeviserDbContext"' started tracking '"SiteSetting"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2021-01-04 06:52:03.639 +01:00 [Debug] Context '"DeviserDbContext"' started tracking '"SiteSetting"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2021-01-04 06:52:03.639 +01:00 [Debug] Context '"DeviserDbContext"' started tracking '"SiteSetting"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2021-01-04 06:52:03.639 +01:00 [Debug] Context '"DeviserDbContext"' started tracking '"SiteSetting"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2021-01-04 06:52:03.639 +01:00 [Debug] Context '"DeviserDbContext"' started tracking '"SiteSetting"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2021-01-04 06:52:03.640 +01:00 [Debug] Context '"DeviserDbContext"' started tracking '"SiteSetting"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2021-01-04 06:52:03.640 +01:00 [Debug] Context '"DeviserDbContext"' started tracking '"SiteSetting"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2021-01-04 06:52:03.640 +01:00 [Debug] Context '"DeviserDbContext"' started tracking '"SiteSetting"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2021-01-04 06:52:03.640 +01:00 [Debug] Context '"DeviserDbContext"' started tracking '"SiteSetting"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2021-01-04 06:52:03.640 +01:00 [Debug] Context '"DeviserDbContext"' started tracking '"SiteSetting"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2021-01-04 06:52:03.640 +01:00 [Debug] Context '"DeviserDbContext"' started tracking '"SiteSetting"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2021-01-04 06:52:03.640 +01:00 [Debug] Context '"DeviserDbContext"' started tracking '"SiteSetting"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2021-01-04 06:52:03.640 +01:00 [Debug] Context '"DeviserDbContext"' started tracking '"SiteSetting"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2021-01-04 06:52:03.640 +01:00 [Debug] Context '"DeviserDbContext"' started tracking '"SiteSetting"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2021-01-04 06:52:03.640 +01:00 [Debug] Context '"DeviserDbContext"' started tracking '"SiteSetting"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2021-01-04 06:52:03.640 +01:00 [Debug] Context '"DeviserDbContext"' started tracking '"SiteSetting"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2021-01-04 06:52:03.640 +01:00 [Debug] Context '"DeviserDbContext"' started tracking '"SiteSetting"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2021-01-04 06:52:03.640 +01:00 [Debug] Context '"DeviserDbContext"' started tracking '"SiteSetting"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2021-01-04 06:52:03.640 +01:00 [Debug] Context '"DeviserDbContext"' started tracking '"SiteSetting"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2021-01-04 06:52:03.640 +01:00 [Debug] Context '"DeviserDbContext"' started tracking '"SiteSetting"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2021-01-04 06:52:03.641 +01:00 [Debug] Context '"DeviserDbContext"' started tracking '"SiteSetting"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2021-01-04 06:52:03.641 +01:00 [Debug] Context '"DeviserDbContext"' started tracking '"SiteSetting"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2021-01-04 06:52:03.641 +01:00 [Debug] Context '"DeviserDbContext"' started tracking '"SiteSetting"' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2021-01-04 06:52:03.645 +01:00 [Debug] A data reader was disposed.
+2021-01-04 06:52:03.646 +01:00 [Debug] Closing connection to database '"Deviser.Demo"' on server '"(localdb)\mssqllocaldb"'.
+2021-01-04 06:52:03.652 +01:00 [Debug] Closed connection to database '"Deviser.Demo"' on server '"(localdb)\mssqllocaldb"'.
+2021-01-04 06:52:03.665 +01:00 [Debug] '"DeviserDbContext"' disposed.
+2021-01-04 07:06:27.679 +01:00 [Debug] An 'IServiceProvider' was created for internal use by Entity Framework.
+2021-01-04 07:06:28.327 +01:00 [Debug] The index "{'ContentTypeId'}" was not created on entity type '"ContentTypeProperty"' as the properties are already covered by the index "{'ContentTypeId', 'PropertyId'}".
+2021-01-04 07:06:28.328 +01:00 [Debug] The index "{'LayoutTypeId'}" was not created on entity type '"LayoutTypeProperty"' as the properties are already covered by the index "{'LayoutTypeId', 'PropertyId'}".
+2021-01-04 07:06:28.328 +01:00 [Debug] The index "{'ModuleViewId'}" was not created on entity type '"ModuleViewProperty"' as the properties are already covered by the index "{'ModuleViewId', 'PropertyId'}".
+2021-01-04 07:06:28.328 +01:00 [Debug] The index "{'PageId'}" was not created on entity type '"PageTranslation"' as the properties are already covered by the index "{'PageId', 'Locale'}".
+2021-01-04 07:06:28.328 +01:00 [Debug] The index "{'UserId'}" was not created on entity type '"UserRole"' as the properties are already covered by the index "{'UserId', 'RoleId'}".
+2021-01-04 07:06:28.328 +01:00 [Debug] The index "{'UserId'}" was not created on entity type '"IdentityUserToken<Guid>"' as the properties are already covered by the index "{'UserId', 'LoginProvider', 'Name'}".
+2021-01-04 07:06:28.551 +01:00 [Information] Entity Framework Core "5.0.0" initialized '"DeviserDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "MigrationsAssembly=Deviser.Core.Data "
+2021-01-04 07:06:28.619 +01:00 [Debug] Compiling query expression: "
+"'"DbSet<SiteSetting>()"'
+2021-01-04 07:06:28.753 +01:00 [Debug] Generated query execution expression: "
+"'"queryContext => new SingleQueryingEnumerable<SiteSetting>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.SelectExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: SiteSetting.Id (Guid) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: SiteSetting.SettingName (string) MaxLength(50), 1], [Property: SiteSetting.SettingValue (string), 2], }
+        SELECT d.Id, d.SettingName, d.SettingValue
+        FROM dp_SiteSetting AS d), 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, SiteSetting>, 
+    Deviser.Core.Data.DeviserDbContext, 
+    False, 
+    False
+)"'
+2021-01-04 07:06:28.786 +01:00 [Debug] Creating DbCommand for '"ExecuteReader"'.
+2021-01-04 07:06:28.832 +01:00 [Debug] Created DbCommand for '"ExecuteReader"' (44ms).
+2021-01-04 07:06:28.835 +01:00 [Debug] Opening connection to database '"Deviser.Demo"' on server '"(localdb)\mssqllocaldb"'.
+2021-01-04 07:06:40.082 +01:00 [Error] An error occurred using the connection to database '"Deviser.Demo"' on server '"(localdb)\mssqllocaldb"'.
+2021-01-04 07:06:40.135 +01:00 [Error] An exception occurred while iterating over the results of a query for context type '"Deviser.Core.Data.DeviserDbContext"'."
+""Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot open database \"Deviser.Demo\" requested by the login. The login failed.
+Login failed for user 'KARTHICK-WS\Karthick'.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+ClientConnectionId:3202e8cb-b78b-4015-8329-b6449aec6476
+Error Number:4060,State:1,Class:11"
+Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot open database "Deviser.Demo" requested by the login. The login failed.
+Login failed for user 'KARTHICK-WS\Karthick'.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+ClientConnectionId:3202e8cb-b78b-4015-8329-b6449aec6476
+Error Number:4060,State:1,Class:11
+2021-01-04 08:54:08.560 +01:00 [Debug] Hosting starting
+2021-01-04 08:54:08.640 +01:00 [Information] User profile is available. Using '"C:\Users\Karthick\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-01-04 08:54:08.646 +01:00 [Debug] Reading data from file '"C:\Users\Karthick\AppData\Local\ASP.NET\DataProtection-Keys\key-19cedc38-5125-419e-a4c9-50141ef552c7.xml"'.
+2021-01-04 08:54:08.647 +01:00 [Debug] Reading data from file '"C:\Users\Karthick\AppData\Local\ASP.NET\DataProtection-Keys\key-9a449598-3608-4c3c-8fb0-94baf285dd18.xml"'.
+2021-01-04 08:54:08.647 +01:00 [Debug] Reading data from file '"C:\Users\Karthick\AppData\Local\ASP.NET\DataProtection-Keys\key-dd860f88-027e-41a6-bc67-3b9d4bbbf5ab.xml"'.
+2021-01-04 08:54:08.654 +01:00 [Debug] Found key {19cedc38-5125-419e-a4c9-50141ef552c7}.
+2021-01-04 08:54:08.660 +01:00 [Debug] Found key {9a449598-3608-4c3c-8fb0-94baf285dd18}.
+2021-01-04 08:54:08.660 +01:00 [Debug] Found key {dd860f88-027e-41a6-bc67-3b9d4bbbf5ab}.
+2021-01-04 08:54:08.668 +01:00 [Debug] Considering key {19cedc38-5125-419e-a4c9-50141ef552c7} with expiration date 2021-02-05 10:38:15Z as default key.
+2021-01-04 08:54:08.705 +01:00 [Debug] Forwarded activator type request from "Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=3.1.9.0, Culture=neutral, PublicKeyToken=adb9793829ddae60" to "Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60"
+2021-01-04 08:54:08.707 +01:00 [Debug] Decrypting secret element using Windows DPAPI.
+2021-01-04 08:54:08.708 +01:00 [Debug] Forwarded activator type request from "Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=3.1.9.0, Culture=neutral, PublicKeyToken=adb9793829ddae60" to "Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60"
+2021-01-04 08:54:08.712 +01:00 [Debug] Opening CNG algorithm '"AES"' from provider 'null' with chaining mode CBC.
+2021-01-04 08:54:08.713 +01:00 [Debug] Opening CNG algorithm '"SHA256"' from provider 'null' with HMAC.
+2021-01-04 08:54:08.717 +01:00 [Debug] Using key {19cedc38-5125-419e-a4c9-50141ef552c7} as the default key.
+2021-01-04 08:54:08.717 +01:00 [Debug] Key ring with default key {19cedc38-5125-419e-a4c9-50141ef552c7} was loaded during application startup.
+2021-01-04 08:54:08.802 +01:00 [Debug] Registered SignalR Protocol: "json", implemented by "Microsoft.AspNetCore.SignalR.Protocol.JsonHubProtocol".
+2021-01-04 08:54:09.849 +01:00 [Debug] Loaded hosting startup assembly "Deviser.Demo"
+2021-01-04 08:54:09.881 +01:00 [Information] Application started. Press Ctrl+C to shut down.
+2021-01-04 08:54:09.883 +01:00 [Information] Hosting environment: "Development"
+2021-01-04 08:54:09.885 +01:00 [Information] Content root path: "D:\Projects\DeviserPlatform\Deviser.Demo\Deviser.Demo\Deviser.Demo"
+2021-01-04 08:54:09.886 +01:00 [Debug] Hosting started
+2021-01-04 08:54:09.915 +01:00 [Information] Request starting HTTP/2 GET https://localhost:44300/ - -
+2021-01-04 08:54:09.918 +01:00 [Debug] Wildcard detected, all requests with hosts will be allowed.
+2021-01-04 08:54:09.919 +01:00 [Debug] The host '"localhost"' is excluded. Skipping HSTS header.
+2021-01-04 08:54:09.938 +01:00 [Debug] "AcceptLanguageHeaderRequestCultureProvider" returned the following unsupported cultures '["en", "de"]'.
+2021-01-04 08:54:09.939 +01:00 [Debug] "AcceptLanguageHeaderRequestCultureProvider" returned the following unsupported UI Cultures '["en", "de"]'.
+2021-01-04 08:54:09.941 +01:00 [Debug] The request path "/" does not match a supported file type
+2021-01-04 08:54:10.017 +01:00 [Debug] 2 candidate(s) found for the request path '"/"'
+2021-01-04 08:54:10.021 +01:00 [Debug] Endpoint '"Deviser.Web.Controllers.PageController.Index (Deviser.Web)"' with route pattern '"{controller=Page}/{action=Index}/{id?}"' is valid for the request path '"/"'
+2021-01-04 08:54:10.027 +01:00 [Debug] Endpoint '"Deviser.Web.Controllers.PageController.Index (Deviser.Web)"' with route pattern '"{**permalink}"' was rejected by constraint '"permalink"':'"Deviser.Web.Infrastructure.PageUrlConstraint"' with value 'null' for the request path '"/"'
+2021-01-04 08:54:10.027 +01:00 [Debug] Endpoint '"Deviser.Web.Controllers.PageController.Index (Deviser.Web)"' with route pattern '"{**permalink}"' is not valid for the request path '"/"'
+2021-01-04 08:54:10.028 +01:00 [Debug] Request matched endpoint '"Deviser.Web.Controllers.PageController.Index (Deviser.Web)"'
+2021-01-04 08:54:10.038 +01:00 [Information] Handling request: /
+2021-01-04 08:54:10.051 +01:00 [Information] Authorization was successful.
+2021-01-04 08:54:10.365 +01:00 [Information] Executing endpoint '"Deviser.Web.Controllers.PageController.Index (Deviser.Web)"'
+2021-01-04 08:54:10.371 +01:00 [Debug] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2021-01-04 08:54:10.398 +01:00 [Information] Route matched with "{action = \"Index\", controller = \"Page\", area = \"\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String)" on controller "Deviser.Web.Controllers.PageController" ("Deviser.Web").
+2021-01-04 08:54:10.399 +01:00 [Debug] Execution plan of "authorization" filters (in the following order): ["None"]
+2021-01-04 08:54:10.399 +01:00 [Debug] Execution plan of "resource" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2021-01-04 08:54:10.401 +01:00 [Debug] Execution plan of "action" filters (in the following order): ["Microsoft.AspNetCore.Mvc.Filters.ControllerActionFilter (Order: -2147483648)", "Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)"]
+2021-01-04 08:54:10.401 +01:00 [Debug] Execution plan of "exception" filters (in the following order): ["None"]
+2021-01-04 08:54:10.401 +01:00 [Debug] Execution plan of "result" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2021-01-04 08:54:10.403 +01:00 [Debug] Executing controller factory for controller "Deviser.Web.Controllers.PageController" ("Deviser.Web")
+2021-01-04 08:54:10.459 +01:00 [Debug] Executed controller factory for controller "Deviser.Web.Controllers.PageController" ("Deviser.Web")
+2021-01-04 08:54:10.466 +01:00 [Debug] Attempting to bind parameter '"permalink"' of type '"System.String"' ...
+2021-01-04 08:54:10.468 +01:00 [Debug] Attempting to bind parameter '"permalink"' of type '"System.String"' using the name '""' in request data ...
+2021-01-04 08:54:10.469 +01:00 [Debug] Could not find a value in the request with name '""' for binding parameter '"permalink"' of type '"System.String"'.
+2021-01-04 08:54:10.469 +01:00 [Debug] Done attempting to bind parameter '"permalink"' of type '"System.String"'.
+2021-01-04 08:54:10.469 +01:00 [Debug] Done attempting to bind parameter '"permalink"' of type '"System.String"'.
+2021-01-04 08:54:10.469 +01:00 [Debug] Attempting to validate the bound parameter '"permalink"' of type '"System.String"' ...
+2021-01-04 08:54:10.470 +01:00 [Debug] Done attempting to validate the bound parameter '"permalink"' of type '"System.String"'.
+2021-01-04 08:54:10.591 +01:00 [Information] Executing action method "Deviser.Web.Controllers.PageController.Index (Deviser.Web)" - Validation state: Valid
+2021-01-04 08:54:10.618 +01:00 [Information] Executed action method "Deviser.Web.Controllers.PageController.Index (Deviser.Web)", returned result "Microsoft.AspNetCore.Mvc.RedirectToActionResult" in 12.3538ms.
+2021-01-04 08:54:10.649 +01:00 [Debug] Found the endpoints ["Route: modules/{area:exists}/{controller=Home}/{action=Index}", "Route: {controller=Page}/{action=Index}/{id?}"] for address "Microsoft.AspNetCore.Routing.RouteValuesAddress"
+2021-01-04 08:54:10.662 +01:00 [Debug] Failed to process the template "modules/{area:exists}/{controller=Home}/{action=Index}" for "Route: modules/{area:exists}/{controller=Home}/{action=Index}". A required route value is missing, or has a different value from the required default values. Supplied ambient values "{ \"action\": \"Index\", \"controller\": \"Page\" }" and "{ \"action\": \"Index\", \"controller\": \"Install\" }" with default values "{ \"action\": \"Index\", \"controller\": \"Home\" }"
+2021-01-04 08:54:10.665 +01:00 [Debug] Successfully processed template "{controller=Page}/{action=Index}/{id?}" for "Route: {controller=Page}/{action=Index}/{id?}" resulting in "/Install" and ""
+2021-01-04 08:54:10.666 +01:00 [Debug] Link generation succeeded for endpoints ["Route: modules/{area:exists}/{controller=Home}/{action=Index}", "Route: {controller=Page}/{action=Index}/{id?}"] with result "/Install"
+2021-01-04 08:54:10.669 +01:00 [Information] Executing RedirectResult, redirecting to "/Install".
+2021-01-04 08:54:10.680 +01:00 [Information] Executed action "Deviser.Web.Controllers.PageController.Index (Deviser.Web)" in 268.7539ms
+2021-01-04 08:54:10.682 +01:00 [Information] Executed endpoint '"Deviser.Web.Controllers.PageController.Index (Deviser.Web)"'
+2021-01-04 08:54:10.685 +01:00 [Information] Finished handling request.
+2021-01-04 08:54:10.713 +01:00 [Debug] Connection ID ""18302628908719145074"" disconnecting.
+2021-01-04 08:54:10.715 +01:00 [Information] Request starting HTTP/2 GET https://localhost:44300/Install - -
+2021-01-04 08:54:10.715 +01:00 [Debug] The host '"localhost"' is excluded. Skipping HSTS header.
+2021-01-04 08:54:10.715 +01:00 [Debug] "AcceptLanguageHeaderRequestCultureProvider" returned the following unsupported cultures '["en", "de"]'.
+2021-01-04 08:54:10.715 +01:00 [Debug] "AcceptLanguageHeaderRequestCultureProvider" returned the following unsupported UI Cultures '["en", "de"]'.
+2021-01-04 08:54:10.715 +01:00 [Debug] The request path "/Install" does not match a supported file type
+2021-01-04 08:54:10.717 +01:00 [Debug] 2 candidate(s) found for the request path '"/Install"'
+2021-01-04 08:54:10.717 +01:00 [Debug] Endpoint '"Deviser.Web.Controllers.InstallController.Index (Deviser.Web)"' with route pattern '"{controller=Page}/{action=Index}/{id?}"' is valid for the request path '"/Install"'
+2021-01-04 08:54:10.717 +01:00 [Debug] Endpoint '"Deviser.Web.Controllers.PageController.Index (Deviser.Web)"' with route pattern '"{**permalink}"' was rejected by constraint '"permalink"':'"Deviser.Web.Infrastructure.PageUrlConstraint"' with value '"Install"' for the request path '"/Install"'
+2021-01-04 08:54:10.717 +01:00 [Debug] Endpoint '"Deviser.Web.Controllers.PageController.Index (Deviser.Web)"' with route pattern '"{**permalink}"' is not valid for the request path '"/Install"'
+2021-01-04 08:54:10.717 +01:00 [Debug] Request matched endpoint '"Deviser.Web.Controllers.InstallController.Index (Deviser.Web)"'
+2021-01-04 08:54:10.719 +01:00 [Information] Handling request: /Install
+2021-01-04 08:54:10.752 +01:00 [Information] Executing endpoint '"Deviser.Web.Controllers.InstallController.Index (Deviser.Web)"'
+2021-01-04 08:54:10.758 +01:00 [Information] Request finished HTTP/2 GET https://localhost:44300/ - - - 302 - - 845.0480ms
+2021-01-04 08:54:10.762 +01:00 [Information] Route matched with "{action = \"Index\", controller = \"Install\", area = \"\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index()" on controller "Deviser.Web.Controllers.InstallController" ("Deviser.Web").
+2021-01-04 08:54:10.762 +01:00 [Debug] Execution plan of "authorization" filters (in the following order): ["None"]
+2021-01-04 08:54:10.762 +01:00 [Debug] Execution plan of "resource" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2021-01-04 08:54:10.762 +01:00 [Debug] Execution plan of "action" filters (in the following order): ["Microsoft.AspNetCore.Mvc.Filters.ControllerActionFilter (Order: -2147483648)", "Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)"]
+2021-01-04 08:54:10.762 +01:00 [Debug] Execution plan of "exception" filters (in the following order): ["None"]
+2021-01-04 08:54:10.762 +01:00 [Debug] Execution plan of "result" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2021-01-04 08:54:10.762 +01:00 [Debug] Executing controller factory for controller "Deviser.Web.Controllers.InstallController" ("Deviser.Web")
+2021-01-04 08:54:10.769 +01:00 [Debug] Executed controller factory for controller "Deviser.Web.Controllers.InstallController" ("Deviser.Web")
+2021-01-04 08:54:10.799 +01:00 [Information] Executing action method "Deviser.Web.Controllers.InstallController.Index (Deviser.Web)" - Validation state: Valid
+2021-01-04 08:54:10.819 +01:00 [Information] Executed action method "Deviser.Web.Controllers.InstallController.Index (Deviser.Web)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 17.9054ms.
+2021-01-04 08:54:10.830 +01:00 [Debug] View lookup cache miss for view '"Index"' in controller '"Install"'.
+2021-01-04 08:54:10.838 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Shared/Admin.cshtml"'.
+2021-01-04 08:54:10.838 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/_ViewImports.cshtml"'.
+2021-01-04 08:54:10.838 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Modules/Blog/Views/Home/Index.cshtml"'.
+2021-01-04 08:54:10.838 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Modules/Blog/Views/Home/Post.cshtml"'.
+2021-01-04 08:54:10.838 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Modules/Blog/Views/Home/_PostLayout.cshtml"'.
+2021-01-04 08:54:10.838 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Modules/Blog/Views/_ViewImports.cshtml"'.
+2021-01-04 08:54:10.838 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Modules/Contact/Views/ContactForm/EmailTemplates/AdminNotification.cshtml"'.
+2021-01-04 08:54:10.838 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Modules/Contact/Views/ContactForm/EmailTemplates/ContactNotification.cshtml"'.
+2021-01-04 08:54:10.838 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Modules/Contact/Views/ContactForm/ViewTemplates/DefaultForm.cshtml"'.
+2021-01-04 08:54:10.838 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Modules/Contact/Views/ContactForm/ViewTemplates/SimpleForm.cshtml"'.
+2021-01-04 08:54:10.838 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Modules/Contact/_ViewImports.cshtml"'.
+2021-01-04 08:54:10.838 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Modules/Contact/Views/ContactForm/EmailTemplates/AdminNotification.cshtml"'.
+2021-01-04 08:54:10.839 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Modules/Contact/Views/ContactForm/EmailTemplates/ContactNotification.cshtml"'.
+2021-01-04 08:54:10.839 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Modules/Contact/Views/ContactForm/ViewTemplates/DefaultForm.cshtml"'.
+2021-01-04 08:54:10.839 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Modules/Contact/Views/ContactForm/ViewTemplates/SimpleForm.cshtml"'.
+2021-01-04 08:54:10.839 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Modules/Contact/_ViewImports.cshtml"'.
+2021-01-04 08:54:10.839 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Modules/Security/Views/Account/AccessDenied.cshtml"'.
+2021-01-04 08:54:10.839 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Modules/Security/Views/Account/ConfirmEmail.cshtml"'.
+2021-01-04 08:54:10.839 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Modules/Security/Views/Account/ExternalLogin.cshtml"'.
+2021-01-04 08:54:10.839 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Modules/Security/Views/Account/ForgotPassword.cshtml"'.
+2021-01-04 08:54:10.839 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Modules/Security/Views/Account/ForgotPasswordConfirmation.cshtml"'.
+2021-01-04 08:54:10.839 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Modules/Security/Views/Account/Lockout.cshtml"'.
+2021-01-04 08:54:10.839 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Modules/Security/Views/Account/Login.cshtml"'.
+2021-01-04 08:54:10.839 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Modules/Security/Views/Account/LoginWith2fa.cshtml"'.
+2021-01-04 08:54:10.839 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Modules/Security/Views/Account/LoginWithRecoveryCode.cshtml"'.
+2021-01-04 08:54:10.839 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Modules/Security/Views/Account/Register.cshtml"'.
+2021-01-04 08:54:10.839 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Modules/Security/Views/Account/ResetPassword.cshtml"'.
+2021-01-04 08:54:10.839 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Modules/Security/Views/Account/ResetPasswordConfirmation.cshtml"'.
+2021-01-04 08:54:10.839 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Modules/Security/Views/Account/SignedOut.cshtml"'.
+2021-01-04 08:54:10.839 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Modules/Security/Views/Edit/Index.cshtml"'.
+2021-01-04 08:54:10.839 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Modules/Security/Views/Manage/ChangePassword.cshtml"'.
+2021-01-04 08:54:10.839 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Modules/Security/Views/Manage/Disable2fa.cshtml"'.
+2021-01-04 08:54:10.839 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Modules/Security/Views/Manage/EnableAuthenticator.cshtml"'.
+2021-01-04 08:54:10.839 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Modules/Security/Views/Manage/ExternalLogins.cshtml"'.
+2021-01-04 08:54:10.839 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Modules/Security/Views/Manage/GenerateRecoveryCodes.cshtml"'.
+2021-01-04 08:54:10.839 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Modules/Security/Views/Manage/Index.cshtml"'.
+2021-01-04 08:54:10.839 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Modules/Security/Views/Manage/ResetAuthenticator.cshtml"'.
+2021-01-04 08:54:10.839 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Modules/Security/Views/Manage/SetPassword.cshtml"'.
+2021-01-04 08:54:10.839 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Modules/Security/Views/Manage/ShowRecoveryCodes.cshtml"'.
+2021-01-04 08:54:10.839 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Modules/Security/Views/Manage/TwoFactorAuthentication.cshtml"'.
+2021-01-04 08:54:10.840 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Modules/Security/Views/Manage/_Layout.cshtml"'.
+2021-01-04 08:54:10.840 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Modules/Security/Views/Manage/_ManageNav.cshtml"'.
+2021-01-04 08:54:10.840 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Modules/Security/Views/Manage/_StatusMessage.cshtml"'.
+2021-01-04 08:54:10.840 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Modules/Security/Views/Manage/_ViewImports.cshtml"'.
+2021-01-04 08:54:10.840 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Modules/Security/Views/Shared/Error.cshtml"'.
+2021-01-04 08:54:10.840 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Modules/Security/Views/Shared/_ValidationScriptsPartial.cshtml"'.
+2021-01-04 08:54:10.840 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Modules/Security/Views/_ViewImports.cshtml"'.
+2021-01-04 08:54:10.840 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Sites/Default/Themes/Skyline/Admin.cshtml"'.
+2021-01-04 08:54:10.840 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Sites/Default/Themes/Skyline/BreadCrumbStyles/Admin.cshtml"'.
+2021-01-04 08:54:10.840 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Sites/Default/Themes/Skyline/ContentTypes/View/accordion.cshtml"'.
+2021-01-04 08:54:10.840 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Sites/Default/Themes/Skyline/ContentTypes/View/blog.cshtml"'.
+2021-01-04 08:54:10.840 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Sites/Default/Themes/Skyline/ContentTypes/View/calltoaction.cshtml"'.
+2021-01-04 08:54:10.840 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Sites/Default/Themes/Skyline/ContentTypes/View/features.cshtml"'.
+2021-01-04 08:54:10.840 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Sites/Default/Themes/Skyline/ContentTypes/View/gallery.cshtml"'.
+2021-01-04 08:54:10.840 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Sites/Default/Themes/Skyline/ContentTypes/View/image.cshtml"'.
+2021-01-04 08:54:10.840 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Sites/Default/Themes/Skyline/ContentTypes/View/map.cshtml"'.
+2021-01-04 08:54:10.840 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Sites/Default/Themes/Skyline/ContentTypes/View/richtext.cshtml"'.
+2021-01-04 08:54:10.840 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Sites/Default/Themes/Skyline/ContentTypes/View/slider.cshtml"'.
+2021-01-04 08:54:10.840 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Sites/Default/Themes/Skyline/ContentTypes/View/tabs.cshtml"'.
+2021-01-04 08:54:10.840 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Sites/Default/Themes/Skyline/ContentTypes/View/team.cshtml"'.
+2021-01-04 08:54:10.840 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Sites/Default/Themes/Skyline/ContentTypes/View/teaserbox.cshtml"'.
+2021-01-04 08:54:10.840 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Sites/Default/Themes/Skyline/ContentTypes/View/text.cshtml"'.
+2021-01-04 08:54:10.840 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Sites/Default/Themes/Skyline/ContentTypes/View/video.cshtml"'.
+2021-01-04 08:54:10.840 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Sites/Default/Themes/Skyline/Default.cshtml"'.
+2021-01-04 08:54:10.840 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Sites/Default/Themes/Skyline/LayoutDesigner.cshtml"'.
+2021-01-04 08:54:10.840 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Sites/Default/Themes/Skyline/LayoutTypes/column.cshtml"'.
+2021-01-04 08:54:10.840 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Sites/Default/Themes/Skyline/LayoutTypes/container.cshtml"'.
+2021-01-04 08:54:10.840 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Sites/Default/Themes/Skyline/LayoutTypes/row.cshtml"'.
+2021-01-04 08:54:10.840 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Sites/Default/Themes/Skyline/LayoutTypes/section.cshtml"'.
+2021-01-04 08:54:10.840 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Sites/Default/Themes/Skyline/LayoutTypes/wrapper.cshtml"'.
+2021-01-04 08:54:10.840 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Sites/Default/Themes/Skyline/LeftNavColumn.cshtml"'.
+2021-01-04 08:54:10.840 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Sites/Default/Themes/Skyline/MenuStyles/Admin.cshtml"'.
+2021-01-04 08:54:10.840 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Sites/Default/Themes/Skyline/MenuStyles/AdminBS4.cshtml"'.
+2021-01-04 08:54:10.840 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Sites/Default/Themes/Skyline/MenuStyles/SiteMain.cshtml"'.
+2021-01-04 08:54:10.840 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Sites/Default/Themes/Skyline/MenuStyles/SiteSide.cshtml"'.
+2021-01-04 08:54:10.840 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Sites/Default/Themes/Skyline/ModuleDefault.cshtml"'.
+2021-01-04 08:54:10.840 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Sites/Default/Themes/Skyline/Static.cshtml"'.
+2021-01-04 08:54:10.840 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Sites/Default/Themes/Skyline/_SiteFooter.cshtml"'.
+2021-01-04 08:54:10.841 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Sites/Default/Themes/Skyline/_SiteHeader.cshtml"'.
+2021-01-04 08:54:10.841 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Sites/Default/Themes/Skyline/_ViewImports.cshtml"'.
+2021-01-04 08:54:10.841 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Sites/Default/Themes/Skyline/_ViewStart.cshtml"'.
+2021-01-04 08:54:10.841 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Install/Index.cshtml"'.
+2021-01-04 08:54:10.841 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Install/Success.cshtml"'.
+2021-01-04 08:54:10.841 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Install/Terms.cshtml"'.
+2021-01-04 08:54:10.841 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Page/DbNotInstalled.cshtml"'.
+2021-01-04 08:54:10.841 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Page/Edit.cshtml"'.
+2021-01-04 08:54:10.841 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Page/EditModule.cshtml"'.
+2021-01-04 08:54:10.841 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Page/Index.cshtml"'.
+2021-01-04 08:54:10.841 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Page/Layout.cshtml"'.
+2021-01-04 08:54:10.841 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Page/NotFound.cshtml"'.
+2021-01-04 08:54:10.841 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Page/UnAuthorized.cshtml"'.
+2021-01-04 08:54:10.841 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Shared/Components/ControlBar/Default.cshtml"'.
+2021-01-04 08:54:10.841 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Shared/Components/LanguageSwitcher/Default.cshtml"'.
+2021-01-04 08:54:10.841 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Shared/Error.cshtml"'.
+2021-01-04 08:54:10.841 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Shared/_AdminLayout.cshtml"'.
+2021-01-04 08:54:10.841 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Shared/_InstallLayout.cshtml"'.
+2021-01-04 08:54:10.841 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Shared/_Layout.cshtml"'.
+2021-01-04 08:54:10.841 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Shared/_LoginPartial.cshtml"'.
+2021-01-04 08:54:10.841 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/Shared/_ValidationScriptsPartial.cshtml"'.
+2021-01-04 08:54:10.841 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/_ViewImports.cshtml"'.
+2021-01-04 08:54:10.841 +01:00 [Debug] Initializing Razor view compiler with compiled view: '"/Views/_ViewStart.cshtml"'.
+2021-01-04 08:54:10.854 +01:00 [Information] Executing ViewResult, running view "Index".
+2021-01-04 08:54:10.855 +01:00 [Debug] The view path '"/Views/Install/Index.cshtml"' was found in 25.1849ms.
+2021-01-04 08:54:10.876 +01:00 [Debug] Found the endpoints ["Route: modules/{area:exists}/{controller=Home}/{action=Index}", "Route: {controller=Page}/{action=Index}/{id?}"] for address "Microsoft.AspNetCore.Routing.RouteValuesAddress"
+2021-01-04 08:54:10.876 +01:00 [Debug] Failed to process the template "modules/{area:exists}/{controller=Home}/{action=Index}" for "Route: modules/{area:exists}/{controller=Home}/{action=Index}". A required route value is missing, or has a different value from the required default values. Supplied ambient values "{ \"action\": \"Index\", \"controller\": \"Install\" }" and "{ \"action\": \"Index\", \"controller\": \"Install\" }" with default values "{ \"action\": \"Index\", \"controller\": \"Home\" }"
+2021-01-04 08:54:10.876 +01:00 [Debug] Successfully processed template "{controller=Page}/{action=Index}/{id?}" for "Route: {controller=Page}/{action=Index}/{id?}" resulting in "/Install" and ""
+2021-01-04 08:54:10.876 +01:00 [Debug] Link generation succeeded for endpoints ["Route: modules/{area:exists}/{controller=Home}/{action=Index}", "Route: {controller=Page}/{action=Index}/{id?}"] with result "/Install"
+2021-01-04 08:54:10.878 +01:00 [Debug] An antiforgery cookie token was reused.
+2021-01-04 08:54:10.945 +01:00 [Debug] Found the endpoints ["Route: modules/{area:exists}/{controller=Home}/{action=Index}", "Route: {controller=Page}/{action=Index}/{id?}"] for address "Microsoft.AspNetCore.Routing.RouteValuesAddress"
+2021-01-04 08:54:10.945 +01:00 [Debug] Failed to process the template "modules/{area:exists}/{controller=Home}/{action=Index}" for "Route: modules/{area:exists}/{controller=Home}/{action=Index}". A required route value is missing, or has a different value from the required default values. Supplied ambient values "{ \"action\": \"Index\", \"controller\": \"Install\" }" and "{ \"action\": \"Terms\", \"controller\": \"Install\" }" with default values "{ \"action\": \"Index\", \"controller\": \"Home\" }"
+2021-01-04 08:54:10.945 +01:00 [Debug] Successfully processed template "{controller=Page}/{action=Index}/{id?}" for "Route: {controller=Page}/{action=Index}/{id?}" resulting in "/Install/Terms" and ""
+2021-01-04 08:54:10.945 +01:00 [Debug] Link generation succeeded for endpoints ["Route: modules/{area:exists}/{controller=Home}/{action=Index}", "Route: {controller=Page}/{action=Index}/{id?}"] with result "/Install/Terms"
+2021-01-04 08:54:10.950 +01:00 [Debug] View lookup cache miss for view '"_InstallLayout"' in controller '"Install"'.
+2021-01-04 08:54:10.965 +01:00 [Debug] View lookup cache miss for view '"_ValidationScriptsPartial"' in controller '"Install"'.
+2021-01-04 08:54:10.985 +01:00 [Information] Executed ViewResult - view "Index" executed in 153.7291ms.
+2021-01-04 08:54:10.988 +01:00 [Information] Executed action "Deviser.Web.Controllers.InstallController.Index (Deviser.Web)" in 223.9292ms
+2021-01-04 08:54:10.992 +01:00 [Information] Executed endpoint '"Deviser.Web.Controllers.InstallController.Index (Deviser.Web)"'
+2021-01-04 08:54:10.997 +01:00 [Information] Finished handling request.
+2021-01-04 08:54:10.999 +01:00 [Debug] Connection ID ""18086456122310394277"" disconnecting.
+2021-01-04 08:54:11.004 +01:00 [Information] Request finished HTTP/2 GET https://localhost:44300/Install - - - 200 - text/html;+charset=utf-8 288.5605ms
+2021-01-04 08:54:11.041 +01:00 [Information] Request starting HTTP/2 GET https://localhost:44300/_content/Deviser.Themes.Skyline/css/site/site.css - -
+2021-01-04 08:54:11.043 +01:00 [Debug] The host '"localhost"' is excluded. Skipping HSTS header.
+2021-01-04 08:54:11.044 +01:00 [Information] Request starting HTTP/2 GET https://localhost:44300/_content/Deviser.Web/images/DeviserLogoDark.svg - -
+2021-01-04 08:54:11.044 +01:00 [Debug] "AcceptLanguageHeaderRequestCultureProvider" returned the following unsupported cultures '["en", "de"]'.
+2021-01-04 08:54:11.044 +01:00 [Debug] The host '"localhost"' is excluded. Skipping HSTS header.
+2021-01-04 08:54:11.045 +01:00 [Debug] "AcceptLanguageHeaderRequestCultureProvider" returned the following unsupported UI Cultures '["en", "de"]'.
+2021-01-04 08:54:11.045 +01:00 [Debug] "AcceptLanguageHeaderRequestCultureProvider" returned the following unsupported cultures '["en", "de"]'.
+2021-01-04 08:54:11.045 +01:00 [Debug] "AcceptLanguageHeaderRequestCultureProvider" returned the following unsupported UI Cultures '["en", "de"]'.
+2021-01-04 08:54:11.071 +01:00 [Information] Request starting HTTP/2 GET https://localhost:44300/_content/Deviser.Web/lib/jquery/dist/jquery.js - -
+2021-01-04 08:54:11.079 +01:00 [Debug] The host '"localhost"' is excluded. Skipping HSTS header.
+2021-01-04 08:54:11.079 +01:00 [Debug] "AcceptLanguageHeaderRequestCultureProvider" returned the following unsupported cultures '["en", "de"]'.
+2021-01-04 08:54:11.079 +01:00 [Debug] "AcceptLanguageHeaderRequestCultureProvider" returned the following unsupported UI Cultures '["en", "de"]'.
+2021-01-04 08:54:11.086 +01:00 [Information] Sending file. Request path: '"/_content/Deviser.Web/images/DeviserLogoDark.svg"'. Physical path: '"C:\Users\Karthick\.nuget\packages\deviser.web\1.0.0-beta2\staticwebassets\images\DeviserLogoDark.svg"'
+2021-01-04 08:54:11.087 +01:00 [Debug] Connection ID ""18302628900129210619"" disconnecting.
+2021-01-04 08:54:11.092 +01:00 [Information] Request finished HTTP/2 GET https://localhost:44300/_content/Deviser.Web/images/DeviserLogoDark.svg - - - 200 2440 image/svg+xml 45.1387ms
+2021-01-04 08:54:11.098 +01:00 [Information] Sending file. Request path: '"/_content/Deviser.Themes.Skyline/css/site/site.css"'. Physical path: '"C:\Users\Karthick\.nuget\packages\deviser.themes.skyline\1.0.0-beta2\staticwebassets\css\site\site.css"'
+2021-01-04 08:54:11.101 +01:00 [Information] Request starting HTTP/2 GET https://localhost:44300/_content/Deviser.Web/lib/bootstrap/dist/js/bootstrap.js - -
+2021-01-04 08:54:11.101 +01:00 [Debug] The host '"localhost"' is excluded. Skipping HSTS header.
+2021-01-04 08:54:11.101 +01:00 [Debug] "AcceptLanguageHeaderRequestCultureProvider" returned the following unsupported cultures '["en", "de"]'.
+2021-01-04 08:54:11.101 +01:00 [Debug] "AcceptLanguageHeaderRequestCultureProvider" returned the following unsupported UI Cultures '["en", "de"]'.
+2021-01-04 08:54:11.103 +01:00 [Debug] Connection ID ""17654110540902957222"" disconnecting.
+2021-01-04 08:54:11.108 +01:00 [Information] Request finished HTTP/2 GET https://localhost:44300/_content/Deviser.Themes.Skyline/css/site/site.css - - - 200 233590 text/css 65.0377ms
+2021-01-04 08:54:11.114 +01:00 [Information] Request starting HTTP/2 GET https://localhost:44300/_content/Deviser.Web/lib/microsoft-signalr/signalr.min.js - -
+2021-01-04 08:54:11.114 +01:00 [Debug] The host '"localhost"' is excluded. Skipping HSTS header.
+2021-01-04 08:54:11.114 +01:00 [Debug] "AcceptLanguageHeaderRequestCultureProvider" returned the following unsupported cultures '["en", "de"]'.
+2021-01-04 08:54:11.115 +01:00 [Debug] "AcceptLanguageHeaderRequestCultureProvider" returned the following unsupported UI Cultures '["en", "de"]'.
+2021-01-04 08:54:11.171 +01:00 [Information] Sending file. Request path: '"/_content/Deviser.Web/lib/jquery/dist/jquery.js"'. Physical path: '"C:\Users\Karthick\.nuget\packages\deviser.web\1.0.0-beta2\staticwebassets\lib\jquery\dist\jquery.js"'
+2021-01-04 08:54:11.175 +01:00 [Information] Sending file. Request path: '"/_content/Deviser.Web/lib/bootstrap/dist/js/bootstrap.js"'. Physical path: '"C:\Users\Karthick\.nuget\packages\deviser.web\1.0.0-beta2\staticwebassets\lib\bootstrap\dist\js\bootstrap.js"'
+2021-01-04 08:54:11.180 +01:00 [Information] Sending file. Request path: '"/_content/Deviser.Web/lib/microsoft-signalr/signalr.min.js"'. Physical path: '"C:\Users\Karthick\.nuget\packages\deviser.web\1.0.0-beta2\staticwebassets\lib\microsoft-signalr\signalr.min.js"'
+2021-01-04 08:54:11.180 +01:00 [Debug] Connection ID ""17942340917054668992"" disconnecting.
+2021-01-04 08:54:11.183 +01:00 [Information] Request finished HTTP/2 GET https://localhost:44300/_content/Deviser.Web/lib/bootstrap/dist/js/bootstrap.js - - - 200 158623 application/javascript 82.2538ms
+2021-01-04 08:54:11.184 +01:00 [Debug] Connection ID ""18374686489872171272"" disconnecting.
+2021-01-04 08:54:11.184 +01:00 [Debug] Connection ID ""18302628900129210621"" disconnecting.
+2021-01-04 08:54:11.190 +01:00 [Information] Request finished HTTP/2 GET https://localhost:44300/_content/Deviser.Web/lib/microsoft-signalr/signalr.min.js - - - 200 121220 application/javascript 72.7951ms
+2021-01-04 08:54:11.191 +01:00 [Information] Request finished HTTP/2 GET https://localhost:44300/_content/Deviser.Web/lib/jquery/dist/jquery.js - - - 200 267365 application/javascript 117.0458ms
+2021-01-04 08:54:11.199 +01:00 [Information] Request starting HTTP/2 GET https://localhost:44300/_content/Deviser.Web/lib/jquery-validation/dist/jquery.validate.js - -
+2021-01-04 08:54:11.200 +01:00 [Debug] The host '"localhost"' is excluded. Skipping HSTS header.
+2021-01-04 08:54:11.200 +01:00 [Debug] "AcceptLanguageHeaderRequestCultureProvider" returned the following unsupported cultures '["en", "de"]'.
+2021-01-04 08:54:11.200 +01:00 [Debug] "AcceptLanguageHeaderRequestCultureProvider" returned the following unsupported UI Cultures '["en", "de"]'.
+2021-01-04 08:54:11.201 +01:00 [Information] Request starting HTTP/2 GET https://localhost:44300/_content/Deviser.Web/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.js - -
+2021-01-04 08:54:11.201 +01:00 [Debug] The host '"localhost"' is excluded. Skipping HSTS header.
+2021-01-04 08:54:11.202 +01:00 [Debug] "AcceptLanguageHeaderRequestCultureProvider" returned the following unsupported cultures '["en", "de"]'.
+2021-01-04 08:54:11.202 +01:00 [Debug] "AcceptLanguageHeaderRequestCultureProvider" returned the following unsupported UI Cultures '["en", "de"]'.
+2021-01-04 08:54:11.220 +01:00 [Information] Sending file. Request path: '"/_content/Deviser.Web/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.js"'. Physical path: '"C:\Users\Karthick\.nuget\packages\deviser.web\1.0.0-beta2\staticwebassets\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.js"'
+2021-01-04 08:54:11.222 +01:00 [Debug] Connection ID ""18302628908719145076"" disconnecting.
+2021-01-04 08:54:11.223 +01:00 [Information] Request finished HTTP/2 GET https://localhost:44300/_content/Deviser.Web/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.js - - - 200 19749 application/javascript 21.1734ms
+2021-01-04 08:54:11.227 +01:00 [Information] Sending file. Request path: '"/_content/Deviser.Web/lib/jquery-validation/dist/jquery.validate.js"'. Physical path: '"C:\Users\Karthick\.nuget\packages\deviser.web\1.0.0-beta2\staticwebassets\lib\jquery-validation\dist\jquery.validate.js"'
+2021-01-04 08:54:11.228 +01:00 [Debug] Connection ID ""18374686489872171274"" disconnecting.
+2021-01-04 08:54:11.231 +01:00 [Information] Request finished HTTP/2 GET https://localhost:44300/_content/Deviser.Web/lib/jquery-validation/dist/jquery.validate.js - - - 200 44027 application/javascript 31.3915ms
+2021-01-04 08:54:11.241 +01:00 [Information] Request starting HTTP/2 POST https://localhost:44300/appHub/negotiate?negotiateVersion=1 text/plain;charset=UTF-8 0
+2021-01-04 08:54:11.242 +01:00 [Debug] The host '"localhost"' is excluded. Skipping HSTS header.
+2021-01-04 08:54:11.242 +01:00 [Debug] "AcceptLanguageHeaderRequestCultureProvider" returned the following unsupported cultures '["en", "de"]'.
+2021-01-04 08:54:11.242 +01:00 [Debug] "AcceptLanguageHeaderRequestCultureProvider" returned the following unsupported UI Cultures '["en", "de"]'.
+2021-01-04 08:54:11.243 +01:00 [Debug] "POST" requests are not supported
+2021-01-04 08:54:11.244 +01:00 [Debug] 2 candidate(s) found for the request path '"/appHub/negotiate"'
+2021-01-04 08:54:11.244 +01:00 [Debug] Endpoint '"/appHub/negotiate"' with route pattern '"/appHub/negotiate"' is valid for the request path '"/appHub/negotiate"'
+2021-01-04 08:54:11.244 +01:00 [Debug] Endpoint '"Deviser.Web.Controllers.PageController.Index (Deviser.Web)"' with route pattern '"{**permalink}"' was rejected by constraint '"permalink"':'"Deviser.Web.Infrastructure.PageUrlConstraint"' with value '"appHub/negotiate"' for the request path '"/appHub/negotiate"'
+2021-01-04 08:54:11.244 +01:00 [Debug] Endpoint '"Deviser.Web.Controllers.PageController.Index (Deviser.Web)"' with route pattern '"{**permalink}"' is not valid for the request path '"/appHub/negotiate"'
+2021-01-04 08:54:11.244 +01:00 [Debug] Request matched endpoint '"/appHub/negotiate"'
+2021-01-04 08:54:11.248 +01:00 [Information] No CORS policy found for the specified request.
+2021-01-04 08:54:11.250 +01:00 [Information] Handling request: /appHub/negotiate
+2021-01-04 08:54:11.254 +01:00 [Information] Executing endpoint '"/appHub/negotiate"'
+2021-01-04 08:54:11.256 +01:00 [Debug] New connection "lClaYmy1B7Zhhh5w_cLLyw" created.
+2021-01-04 08:54:11.272 +01:00 [Debug] Sending negotiation response.
+2021-01-04 08:54:11.276 +01:00 [Information] Executed endpoint '"/appHub/negotiate"'
+2021-01-04 08:54:11.278 +01:00 [Information] Finished handling request.
+2021-01-04 08:54:11.279 +01:00 [Debug] Connection ID ""18086456122310394279"" disconnecting.
+2021-01-04 08:54:11.280 +01:00 [Information] Request finished HTTP/2 POST https://localhost:44300/appHub/negotiate?negotiateVersion=1 text/plain;charset=UTF-8 0 - 200 316 application/json 39.2404ms
+2021-01-04 08:54:11.328 +01:00 [Information] Request starting HTTP/1.1 GET https://localhost:44300/appHub?id=-vOWRYZAIi1Bsw3_tlk3lA - -
+2021-01-04 08:54:11.329 +01:00 [Debug] The host '"localhost"' is excluded. Skipping HSTS header.
+2021-01-04 08:54:11.329 +01:00 [Debug] "AcceptLanguageHeaderRequestCultureProvider" returned the following unsupported cultures '["en", "de"]'.
+2021-01-04 08:54:11.329 +01:00 [Debug] "AcceptLanguageHeaderRequestCultureProvider" returned the following unsupported UI Cultures '["en", "de"]'.
+2021-01-04 08:54:11.329 +01:00 [Debug] The request path "/appHub" does not match a supported file type
+2021-01-04 08:54:11.329 +01:00 [Debug] 2 candidate(s) found for the request path '"/appHub"'
+2021-01-04 08:54:11.329 +01:00 [Debug] Endpoint '"/appHub"' with route pattern '"/appHub"' is valid for the request path '"/appHub"'
+2021-01-04 08:54:11.329 +01:00 [Debug] Endpoint '"Deviser.Web.Controllers.PageController.Index (Deviser.Web)"' with route pattern '"{**permalink}"' was rejected by constraint '"permalink"':'"Deviser.Web.Infrastructure.PageUrlConstraint"' with value '"appHub"' for the request path '"/appHub"'
+2021-01-04 08:54:11.329 +01:00 [Debug] Endpoint '"Deviser.Web.Controllers.PageController.Index (Deviser.Web)"' with route pattern '"{**permalink}"' is not valid for the request path '"/appHub"'
+2021-01-04 08:54:11.329 +01:00 [Debug] Request matched endpoint '"/appHub"'
+2021-01-04 08:54:11.331 +01:00 [Information] No CORS policy found for the specified request.
+2021-01-04 08:54:11.334 +01:00 [Information] Handling request: /appHub
+2021-01-04 08:54:11.337 +01:00 [Information] Executing endpoint '"/appHub"'
+2021-01-04 08:54:11.344 +01:00 [Debug] Establishing new connection.
+2021-01-04 08:54:11.347 +01:00 [Debug] OnConnectedAsync started.
+2021-01-04 08:54:11.350 +01:00 [Debug] Socket opened using Sub-Protocol: 'null'.
+2021-01-04 08:54:11.380 +01:00 [Information] Request starting HTTP/2 GET https://localhost:44300/_content/Deviser.Web/images/favicons/site.webmanifest - -
+2021-01-04 08:54:11.380 +01:00 [Debug] The host '"localhost"' is excluded. Skipping HSTS header.
+2021-01-04 08:54:11.380 +01:00 [Debug] "AcceptLanguageHeaderRequestCultureProvider" returned the following unsupported cultures '["en", "de"]'.
+2021-01-04 08:54:11.380 +01:00 [Debug] "AcceptLanguageHeaderRequestCultureProvider" returned the following unsupported UI Cultures '["en", "de"]'.
+2021-01-04 08:54:11.384 +01:00 [Information] Sending file. Request path: '"/_content/Deviser.Web/images/favicons/site.webmanifest"'. Physical path: '"C:\Users\Karthick\.nuget\packages\deviser.web\1.0.0-beta2\staticwebassets\images\favicons\site.webmanifest"'
+2021-01-04 08:54:11.386 +01:00 [Debug] Connection ID ""18302628908719145078"" disconnecting.
+2021-01-04 08:54:11.387 +01:00 [Information] Request finished HTTP/2 GET https://localhost:44300/_content/Deviser.Web/images/favicons/site.webmanifest - - - 200 445 application/manifest+json 7.7273ms
+2021-01-04 08:54:11.393 +01:00 [Debug] Found protocol implementation for requested protocol: "json".
+2021-01-04 08:54:11.395 +01:00 [Debug] Completed connection handshake. Using HubProtocol '"json"'.
+2021-01-04 08:54:57.949 +01:00 [Information] Request starting HTTP/2 POST https://localhost:44300/Install application/x-www-form-urlencoded;+charset=UTF-8 502
+2021-01-04 08:54:57.949 +01:00 [Debug] The host '"localhost"' is excluded. Skipping HSTS header.
+2021-01-04 08:54:57.950 +01:00 [Debug] "AcceptLanguageHeaderRequestCultureProvider" returned the following unsupported cultures '["en", "de"]'.
+2021-01-04 08:54:57.950 +01:00 [Debug] "AcceptLanguageHeaderRequestCultureProvider" returned the following unsupported UI Cultures '["en", "de"]'.
+2021-01-04 08:54:57.950 +01:00 [Debug] "POST" requests are not supported
+2021-01-04 08:54:57.950 +01:00 [Debug] 3 candidate(s) found for the request path '"/Install"'
+2021-01-04 08:54:57.950 +01:00 [Debug] Endpoint '"Deviser.Web.Controllers.InstallController.Index (Deviser.Web)"' with route pattern '"{controller=Page}/{action=Index}/{id?}"' is valid for the request path '"/Install"'
+2021-01-04 08:54:57.950 +01:00 [Debug] Endpoint '"Deviser.Web.Controllers.InstallController.Index (Deviser.Web)"' with route pattern '"{controller=Page}/{action=Index}/{id?}"' is valid for the request path '"/Install"'
+2021-01-04 08:54:57.950 +01:00 [Debug] Endpoint '"Deviser.Web.Controllers.PageController.Index (Deviser.Web)"' with route pattern '"{**permalink}"' was rejected by constraint '"permalink"':'"Deviser.Web.Infrastructure.PageUrlConstraint"' with value '"Install"' for the request path '"/Install"'
+2021-01-04 08:54:57.950 +01:00 [Debug] Endpoint '"Deviser.Web.Controllers.PageController.Index (Deviser.Web)"' with route pattern '"{**permalink}"' is not valid for the request path '"/Install"'
+2021-01-04 08:54:57.950 +01:00 [Debug] Request matched endpoint '"Deviser.Web.Controllers.InstallController.Index (Deviser.Web)"'
+2021-01-04 08:54:57.953 +01:00 [Information] No CORS policy found for the specified request.
+2021-01-04 08:54:57.956 +01:00 [Information] Handling request: /Install
+2021-01-04 08:54:57.958 +01:00 [Information] Executing endpoint '"Deviser.Web.Controllers.InstallController.Index (Deviser.Web)"'
+2021-01-04 08:54:57.965 +01:00 [Information] Route matched with "{action = \"Index\", controller = \"Install\", area = \"\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Deviser.Core.Common.DomainTypes.InstallModel)" on controller "Deviser.Web.Controllers.InstallController" ("Deviser.Web").
+2021-01-04 08:54:57.965 +01:00 [Debug] Execution plan of "authorization" filters (in the following order): ["None"]
+2021-01-04 08:54:57.965 +01:00 [Debug] Execution plan of "resource" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2021-01-04 08:54:57.965 +01:00 [Debug] Execution plan of "action" filters (in the following order): ["Microsoft.AspNetCore.Mvc.Filters.ControllerActionFilter (Order: -2147483648)", "Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)"]
+2021-01-04 08:54:57.965 +01:00 [Debug] Execution plan of "exception" filters (in the following order): ["None"]
+2021-01-04 08:54:57.965 +01:00 [Debug] Execution plan of "result" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2021-01-04 08:54:57.966 +01:00 [Debug] Executing controller factory for controller "Deviser.Web.Controllers.InstallController" ("Deviser.Web")
+2021-01-04 08:54:57.966 +01:00 [Debug] Executed controller factory for controller "Deviser.Web.Controllers.InstallController" ("Deviser.Web")
+2021-01-04 08:54:57.973 +01:00 [Debug] Attempting to bind parameter '"installModel"' of type '"Deviser.Core.Common.DomainTypes.InstallModel"' ...
+2021-01-04 08:54:57.975 +01:00 [Debug] Attempting to bind parameter '"installModel"' of type '"Deviser.Core.Common.DomainTypes.InstallModel"' using the name '""' in request data ...
+2021-01-04 08:54:57.978 +01:00 [Debug] Attempting to bind property '"Deviser.Core.Common.DomainTypes.InstallModel"."AdminEmail"' of type '"System.String"' using the name '"AdminEmail"' in request data ...
+2021-01-04 08:54:57.979 +01:00 [Debug] Done attempting to bind property '"Deviser.Core.Common.DomainTypes.InstallModel"."AdminEmail"' of type '"System.String"'.
+2021-01-04 08:54:57.980 +01:00 [Debug] Attempting to bind property '"Deviser.Core.Common.DomainTypes.InstallModel"."AdminPassword"' of type '"System.String"' using the name '"AdminPassword"' in request data ...
+2021-01-04 08:54:57.980 +01:00 [Debug] Done attempting to bind property '"Deviser.Core.Common.DomainTypes.InstallModel"."AdminPassword"' of type '"System.String"'.
+2021-01-04 08:54:57.980 +01:00 [Debug] Attempting to bind property '"Deviser.Core.Common.DomainTypes.InstallModel"."AdminConfirmPassword"' of type '"System.String"' using the name '"AdminConfirmPassword"' in request data ...
+2021-01-04 08:54:57.980 +01:00 [Debug] Done attempting to bind property '"Deviser.Core.Common.DomainTypes.InstallModel"."AdminConfirmPassword"' of type '"System.String"'.
+2021-01-04 08:54:57.980 +01:00 [Debug] Attempting to bind property '"Deviser.Core.Common.DomainTypes.InstallModel"."SiteName"' of type '"System.String"' using the name '"SiteName"' in request data ...
+2021-01-04 08:54:57.980 +01:00 [Debug] Done attempting to bind property '"Deviser.Core.Common.DomainTypes.InstallModel"."SiteName"' of type '"System.String"'.
+2021-01-04 08:54:57.980 +01:00 [Debug] Attempting to bind property '"Deviser.Core.Common.DomainTypes.InstallModel"."DatabaseProvider"' of type '"Deviser.Core.Common.DomainTypes.DatabaseProvider"' using the name '"DatabaseProvider"' in request data ...
+2021-01-04 08:54:57.981 +01:00 [Debug] Done attempting to bind property '"Deviser.Core.Common.DomainTypes.InstallModel"."DatabaseProvider"' of type '"Deviser.Core.Common.DomainTypes.DatabaseProvider"'.
+2021-01-04 08:54:57.981 +01:00 [Debug] Attempting to bind property '"Deviser.Core.Common.DomainTypes.InstallModel"."ServerName"' of type '"System.String"' using the name '"ServerName"' in request data ...
+2021-01-04 08:54:57.981 +01:00 [Debug] Done attempting to bind property '"Deviser.Core.Common.DomainTypes.InstallModel"."ServerName"' of type '"System.String"'.
+2021-01-04 08:54:57.981 +01:00 [Debug] Attempting to bind property '"Deviser.Core.Common.DomainTypes.InstallModel"."DatabaseName"' of type '"System.String"' using the name '"DatabaseName"' in request data ...
+2021-01-04 08:54:57.981 +01:00 [Debug] Done attempting to bind property '"Deviser.Core.Common.DomainTypes.InstallModel"."DatabaseName"' of type '"System.String"'.
+2021-01-04 08:54:57.981 +01:00 [Debug] Attempting to bind property '"Deviser.Core.Common.DomainTypes.InstallModel"."IsIntegratedSecurity"' of type '"System.Boolean"' using the name '"IsIntegratedSecurity"' in request data ...
+2021-01-04 08:54:57.981 +01:00 [Debug] Done attempting to bind property '"Deviser.Core.Common.DomainTypes.InstallModel"."IsIntegratedSecurity"' of type '"System.Boolean"'.
+2021-01-04 08:54:57.982 +01:00 [Debug] Attempting to bind property '"Deviser.Core.Common.DomainTypes.InstallModel"."DBUserName"' of type '"System.String"' using the name '"DBUserName"' in request data ...
+2021-01-04 08:54:57.982 +01:00 [Debug] Done attempting to bind property '"Deviser.Core.Common.DomainTypes.InstallModel"."DBUserName"' of type '"System.String"'.
+2021-01-04 08:54:57.982 +01:00 [Debug] Attempting to bind property '"Deviser.Core.Common.DomainTypes.InstallModel"."DBPassword"' of type '"System.String"' using the name '"DBPassword"' in request data ...
+2021-01-04 08:54:57.982 +01:00 [Debug] Done attempting to bind property '"Deviser.Core.Common.DomainTypes.InstallModel"."DBPassword"' of type '"System.String"'.
+2021-01-04 08:54:57.982 +01:00 [Debug] Attempting to bind property '"Deviser.Core.Common.DomainTypes.InstallModel"."AcceptLicense"' of type '"System.Boolean"' using the name '"AcceptLicense"' in request data ...
+2021-01-04 08:54:57.982 +01:00 [Debug] Done attempting to bind property '"Deviser.Core.Common.DomainTypes.InstallModel"."AcceptLicense"' of type '"System.Boolean"'.
+2021-01-04 08:54:57.983 +01:00 [Debug] Done attempting to bind parameter '"installModel"' of type '"Deviser.Core.Common.DomainTypes.InstallModel"'.
+2021-01-04 08:54:57.983 +01:00 [Debug] Done attempting to bind parameter '"installModel"' of type '"Deviser.Core.Common.DomainTypes.InstallModel"'.
+2021-01-04 08:54:57.983 +01:00 [Debug] Attempting to validate the bound parameter '"installModel"' of type '"Deviser.Core.Common.DomainTypes.InstallModel"' ...
+2021-01-04 08:54:57.990 +01:00 [Debug] Done attempting to validate the bound parameter '"installModel"' of type '"Deviser.Core.Common.DomainTypes.InstallModel"'.
+2021-01-04 08:54:58.013 +01:00 [Information] Executing action method "Deviser.Web.Controllers.InstallController.Index (Deviser.Web)" - Validation state: Valid
+2021-01-04 08:54:58.138 +01:00 [Information] Deviser Platform Installation begins
+2021-01-04 08:54:58.150 +01:00 [Information] Verifying whether the database exist
+2021-01-04 08:54:58.153 +01:00 [Information] Creating database
+2021-01-04 08:54:58.252 +01:00 [Information] Creating platform database objects
+2021-01-04 08:55:00.378 +01:00 [Information] Inserting platform data
+2021-01-04 08:55:01.627 +01:00 [Information] Creating module database objects
+2021-01-04 08:55:01.756 +01:00 [Information] Creating admin user account
+2021-01-04 08:55:02.346 +01:00 [Information] Creating the config files
+2021-01-04 08:55:02.376 +01:00 [Information] Finalizing the installation
+2021-01-04 08:55:02.401 +01:00 [Information] Deviser Platform has been installed successfully!
+2021-01-04 08:55:02.405 +01:00 [Debug] Hosting stopping
+2021-01-04 08:55:02.433 +01:00 [Debug] Waiting for the application to finish sending data.
+2021-01-04 08:55:02.435 +01:00 [Debug] Socket closed.
+2021-01-04 08:55:02.448 +01:00 [Debug] OnConnectedAsync ending.
+2021-01-04 08:55:02.463 +01:00 [Debug] Removing connection "-vOWRYZAIi1Bsw3_tlk3lA" from the list of connections.
+2021-01-04 08:55:02.465 +01:00 [Information] Application is shutting down...
+2021-01-04 08:55:02.471 +01:00 [Information] Executed action method "Deviser.Web.Controllers.InstallController.Index (Deviser.Web)", returned result "Microsoft.AspNetCore.Mvc.OkResult" in 4452.8065ms.
+2021-01-04 08:55:02.477 +01:00 [Information] Executed endpoint '"/appHub"'
+2021-01-04 08:55:02.479 +01:00 [Information] Finished handling request.
+2021-01-04 08:55:02.482 +01:00 [Information] Request finished HTTP/1.1 GET https://localhost:44300/appHub?id=-vOWRYZAIi1Bsw3_tlk3lA - - - 101 - - 51153.7709ms
+2021-01-04 08:55:02.491 +01:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 200
+2021-01-04 08:55:02.493 +01:00 [Information] Executed action "Deviser.Web.Controllers.InstallController.Index (Deviser.Web)" in 4525.5012ms
+2021-01-04 08:55:02.496 +01:00 [Information] Executed endpoint '"Deviser.Web.Controllers.InstallController.Index (Deviser.Web)"'
+2021-01-04 08:55:02.498 +01:00 [Information] Finished handling request.
+2021-01-04 08:55:02.498 +01:00 [Debug] Connection ID ""17654110540902957224"" disconnecting.
+2021-01-04 08:55:02.501 +01:00 [Information] Request finished HTTP/2 POST https://localhost:44300/Install application/x-www-form-urlencoded;+charset=UTF-8 502 - 200 - - 4551.7484ms
+2021-01-04 08:55:02.502 +01:00 [Debug] Hosting stopped
