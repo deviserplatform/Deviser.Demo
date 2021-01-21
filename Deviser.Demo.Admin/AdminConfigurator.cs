@@ -2,6 +2,8 @@
 using Deviser.Admin;
 using Deviser.Admin.Config;
 using Deviser.Core.Library.Multilingual;
+using Deviser.Demo.Admin.Models;
+using Deviser.Demo.Admin.Services;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Deviser.Demo.Admin
@@ -19,6 +21,7 @@ namespace Deviser.Demo.Admin
                     .AddField(c => c.Name)
                     .AddField(c => c.Designation)
                     .AddField(c => c.Email)
+                    .AddField(c=>c.Nationality)
                     .AddField(c => c.IsActive, option =>
                     {
                         option.DisplayName = "Is Active";
@@ -39,6 +42,36 @@ namespace Deviser.Demo.Admin
                 modelBuilder.FormBuilder.Property(c => c.Nationality).HasLookup(sp => sp.GetService<EmployeeAdminService>().GetCountries(),
                     ke => ke.Code,
                     de => de.Name);
+            });
+
+            adminBuilder.RegisterGrid<Customer, CustomerAdminGridService>(builder =>
+            {
+                builder.Title = "Customers";
+
+                builder
+                    .AddKeyField(c=>c.Id)
+                    .AddField(c => c.OrderId)
+                    .AddField(c => c.Name)
+                    .AddField(c => c.Email)
+                    .AddField(c => c.OrderDate)
+                    .AddField(c => c.OrderStatus)
+                    .AddField(c => c.ShipDate)
+                    .AddField(c => c.ShipCountry);
+
+                builder.Property(c => c.ShipCountry).HasLookup(sp => sp.GetService<EmployeeAdminService>().GetCountries(),
+                    ke => ke.Code,
+                    de => de.Name);
+
+                builder.Property(c => c.OrderStatus).HasLookup(sp => OrderStatus.OrderStatuses,
+                    ke => ke.Id,
+                    de => de.Name);
+
+                builder.DisplayFieldAs(c => c.OrderStatus, LabelType.Badge, c => c.OrderStatusClass);
+
+                builder.AddRowAction("MarkAsDelivered", "Mark As Delivered",
+                    (provider, item) => provider.GetService<CustomerAdminGridService>().MarkDelivered(item));
+
+                builder.HideEditButton();
             });
         }
     }

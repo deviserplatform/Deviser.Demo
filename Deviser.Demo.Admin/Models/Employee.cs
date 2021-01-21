@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Deviser.Demo.Admin
+namespace Deviser.Demo.Admin.Models
 {
     public class Employee
     {

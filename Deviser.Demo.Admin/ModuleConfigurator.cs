@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Deviser.Core.Common.Module;
 using Deviser.Core.Library.Modules;
+using Deviser.Demo.Admin.Models;
+using Deviser.Demo.Admin.Services;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Deviser.Demo.Admin
@@ -21,6 +23,7 @@ namespace Deviser.Demo.Admin
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<EmployeeAdminService>();
+            services.AddScoped<CustomerAdminGridService>();
         }
     }
 }
