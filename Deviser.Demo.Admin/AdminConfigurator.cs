@@ -73,6 +73,40 @@ namespace Deviser.Demo.Admin
 
                 builder.HideEditButton();
             });
+
+            adminBuilder.RegisterForm<Guest, EventFormService>(builder =>
+            {
+                builder
+                     .AddFieldSet("General", fieldBuilder =>
+                     {
+                         fieldBuilder
+                             .AddKeyField(c => c.Id)
+                             .AddField(p => p.Name)
+                             .AddSelectField(p => p.Gender)
+                             .AddField(p => p.Email, option => option.ValidationType = ValidationType.Email);
+                     })
+
+                     .AddFieldSet("Dietary requirements", fieldBuilder =>
+                     {
+                         fieldBuilder
+                             .AddField(p => p.IsTakePartInDinner)
+                             .AddSelectField(p => p.FoodType);
+                     });
+
+                builder.Property(f => f.FoodType)
+                    .ShowOn(f => f.IsTakePartInDinner)
+                    .ValidateOn(f => f.IsTakePartInDinner);
+
+                builder.Property(f => f.Gender).HasLookup(
+                    sp => Gender.Genders,
+                    ke => ke.Id,
+                    de => de.Name);
+
+                builder.Property(f => f.FoodType).HasLookup(
+                    sp => FoodType.FoodTypes,
+                    ke => ke.Id,
+                    de => de.Name);
+            });
         }
     }
 
