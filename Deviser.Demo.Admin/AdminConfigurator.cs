@@ -1,10 +1,14 @@
-﻿using System.Text;
+﻿using System;
+using System.Text;
 using Deviser.Admin;
 using Deviser.Admin.Config;
+using Deviser.Core.Common.DomainTypes;
+using Deviser.Core.Data.Repositories;
 using Deviser.Core.Library.Multilingual;
 using Deviser.Demo.Admin.Models;
 using Deviser.Demo.Admin.Services;
 using Microsoft.Extensions.DependencyInjection;
+using FieldType = Deviser.Admin.Config.FieldType;
 
 namespace Deviser.Demo.Admin
 {
@@ -21,7 +25,7 @@ namespace Deviser.Demo.Admin
                     .AddField(c => c.Name)
                     .AddField(c => c.Designation)
                     .AddField(c => c.Email)
-                    .AddField(c=>c.Nationality)
+                    .AddField(c => c.Nationality)
                     .AddField(c => c.IsActive, option =>
                     {
                         option.DisplayName = "Is Active";
@@ -49,7 +53,7 @@ namespace Deviser.Demo.Admin
                 builder.Title = "Customers";
 
                 builder
-                    .AddKeyField(c=>c.Id)
+                    .AddKeyField(c => c.Id)
                     .AddField(c => c.OrderId)
                     .AddField(c => c.Name)
                     .AddField(c => c.Email)
@@ -107,12 +111,47 @@ namespace Deviser.Demo.Admin
                     ke => ke.Id,
                     de => de.Name);
             });
-        }
-    }
 
-    public class Country
-    {
-        public string Code { get; set; }
-        public string Name { get; set; }
+            adminBuilder.RegisterTreeAndForm<Folder, FolderAdminService>(builder =>
+            {
+                builder.TreeBuilder.Title = "File Manager";
+                builder.FormBuilder.Title = "File Manager";
+                builder.TreeBuilder.ConfigureTree(p => p.Id,
+                    p => p.Name,
+                    p => p.Parent,
+                    p => p.SubFolders,
+                    p => p.SortOrder);
+
+                var formBuilder = builder.FormBuilder;
+                var adminId = Guid.Parse("5308b86c-a2fc-4220-8ba2-47e7bec1938d");
+                var urlId = Guid.Parse("bfefa535-7af1-4ddc-82c0-c906c948367a");
+                var standardId = Guid.Parse("4c06dcfd-214f-45af-8404-ff84b412ab01");
+
+                formBuilder
+                     .AddFieldSet("General", fieldBuilder =>
+                     {
+                         fieldBuilder
+                             .AddField(p => p.Name);
+                     })
+
+                     .AddFieldSet("Permissions", fieldBuilder =>
+                     {
+                         fieldBuilder.AddCheckBoxMatrix(p => p.PagePermissions,
+                             p => p.RoleId,
+                             p => p.PermissionId,
+                             p => p.Id,
+                             p => p.FolderId, typeof(Role), typeof(Permission),
+                             option => option.IsRequired = false);
+                     });
+
+                formBuilder.Property(f => f.PagePermissions).HasMatrixLookup<Role, Permission, Guid>(
+                    sp => sp.GetService<IRoleRepository>().GetRoles(),
+                    ke => ke.Id,
+                    de => de.Name,
+                    sp => sp.GetService<IPermissionRepository>().GetPagePermissions(),
+                    ke => ke.Id,
+                    de => de.Name);
+            });
+        }
     }
 }

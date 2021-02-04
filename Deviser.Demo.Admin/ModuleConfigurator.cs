@@ -24,7 +24,8 @@ namespace Deviser.Demo.Admin
         {
             services.AddScoped<EmployeeAdminService>();
             services.AddScoped<CustomerAdminGridService>();
-            services.AddScoped<EventFormService>(); 
+            services.AddScoped<EventFormService>();
+            services.AddScoped<FolderAdminService>();
         }
     }
 }

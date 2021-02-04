@@ -5,12 +5,67 @@ using Deviser.Core.Common;
 using Deviser.Core.Common.FileProviders;
 using Deviser.Demo.Admin.Models;
 using Deviser.Demo.Admin.Services;
+using Newtonsoft.Json;
 
 namespace Deviser.Demo.Admin.Data
 {
     public class InMemoryDb
     {
         private static readonly string CountriesJson = EmbeddedProvider.GetFileContentAsString(typeof(EmployeeAdminService).Assembly, "countries.json");
+
+        private static Folder RootFolder = new Folder()
+        {
+            Id = Guid.NewGuid(),
+            Name = "Root",
+            SortOrder = 0,
+            SubFolders = new List<Folder>()
+            {
+            }
+        };
+
+        private static ICollection<Folder> SubFolders = new List<Folder>()
+        {
+            new Folder()
+            {
+                Id = Guid.NewGuid(),
+                Name = "Folder 1",
+                SortOrder = 0,
+                ParentId = RootFolder.Id,
+                SubFolders = new List<Folder>()
+                {
+                }
+            },
+            new Folder()
+            {
+                Id = Guid.NewGuid(),
+                Name = "Folder 2",
+                SortOrder = 0,
+                ParentId = RootFolder.Id,
+                SubFolders = new List<Folder>()
+                {
+                }
+            },
+            new Folder()
+            {
+                Id = Guid.NewGuid(),
+                Name = "Folder 3",
+                SortOrder = 0,
+                ParentId = RootFolder.Id,
+                SubFolders = new List<Folder>()
+                {
+                }
+            }
+        };
+
+        static InMemoryDb()
+        {
+            var flatFolders = new List<Folder>()
+            {
+                RootFolder
+            };
+            flatFolders.AddRange(SubFolders);
+            FlatFolders = flatFolders;
+        }
 
         public static readonly ICollection<Country> Countries = SDJsonConvert.DeserializeObject<List<Country>>(CountriesJson);
 
@@ -143,5 +198,7 @@ namespace Deviser.Demo.Admin.Data
                 ShipCountry = Countries.First(c => c.Code == "GB")
             }
         };
+
+        public static ICollection<Folder> FlatFolders { get; }
     }
 }
