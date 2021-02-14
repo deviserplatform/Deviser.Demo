@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+		<GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Deviser.Admin" Version="1.0.0-beta1" />
+		<PackageReference Include="Deviser.Admin.Web" Version="1.0.0-beta1" />
+		<PackageReference Include="Deviser.Core.Library" Version="1.0.0-beta1" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.0">
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+
+	<!--<ItemGroup>
+	  <ProjectReference Include="..\..\..\Karthick\deviserplatform\src\Deviser.Core\Deviser.Admin.Web\Deviser.Admin.Web.csproj" />
+	  <ProjectReference Include="..\..\..\Karthick\deviserplatform\src\Deviser.Core\Deviser.Admin\Deviser.Admin.csproj" />
+	  <ProjectReference Include="..\..\..\Karthick\deviserplatform\src\Deviser.Core\Deviser.Core.Library\Deviser.Core.Library.csproj" />
+	</ItemGroup>-->
+
+</Project>

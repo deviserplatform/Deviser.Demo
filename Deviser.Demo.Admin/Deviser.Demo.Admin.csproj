@@ -1,7 +1,9 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
 	<PropertyGroup>
 		<TargetFramework>net5.0</TargetFramework>
+		<AddRazorSupportForMvc>true</AddRazorSupportForMvc>
+		<IsShippingPackage>true</IsShippingPackage>
 		<GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
 	</PropertyGroup>
 
@@ -16,5 +18,12 @@
 	<ItemGroup>
 		<EmbeddedResource Include="countries.json" />
 	</ItemGroup>
+
+
+	<!--<ItemGroup>
+		<ProjectReference Include="..\..\..\Karthick\deviserplatform\src\Deviser.Core\Deviser.Admin.Web\Deviser.Admin.Web.csproj" />
+		<ProjectReference Include="..\..\..\Karthick\deviserplatform\src\Deviser.Core\Deviser.Admin\Deviser.Admin.csproj" />
+		<ProjectReference Include="..\..\..\Karthick\deviserplatform\src\Deviser.Core\Deviser.Core.Library\Deviser.Core.Library.csproj" />
+	</ItemGroup>-->
 
 </Project>
