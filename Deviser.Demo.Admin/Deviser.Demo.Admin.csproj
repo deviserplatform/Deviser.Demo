@@ -8,9 +8,9 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Deviser.Admin" Version="1.0.0-beta2.25" />
-		<PackageReference Include="Deviser.Admin.Web" Version="1.0.0-beta2.25" />
-		<PackageReference Include="Deviser.Core.Library" Version="1.0.0-beta2.25" />
+		<PackageReference Include="Deviser.Admin" Version="1.0.0-beta2.27" />
+		<PackageReference Include="Deviser.Admin.Web" Version="1.0.0-beta2.27" />
+		<PackageReference Include="Deviser.Core.Library" Version="1.0.0-beta2.27" />
 		<PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="6.0.9" />
 	</ItemGroup>
 
