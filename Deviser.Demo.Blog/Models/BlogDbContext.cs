@@ -149,7 +149,7 @@ namespace Deviser.Demo.Blog.Models
                 .Build();
             var builder = new DbContextOptionsBuilder<BlogDbContext>();
             var connectionString = configuration.GetConnectionString(Globals.ConnectionStringKeys[DatabaseProvider.MySql]);
-            builder.UseMySql(connectionString, b => b.MigrationsAssembly("Deviser.Demo.Blog"));
+            builder.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString), b => b.MigrationsAssembly("Deviser.Demo.Blog"));
             return new MySqlBlogDbContext(builder.Options);
         }
     }
